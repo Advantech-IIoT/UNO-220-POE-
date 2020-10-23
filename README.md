@@ -1,6 +1,3 @@
----
-tags: pi4, uno220
----
 
 # UNO-220 
 
@@ -49,18 +46,37 @@ tags: pi4, uno220
 
 ### Build Image
 
-#### Clone Builder
+#### Clone Builder Source
 
+ssh
 ```
+$ git clone git@github.com:advantechralph/uno-220.git
+```
+or https
+```
+$ git clone https://github.com/advantechralph/uno-220.git
 ```
 
 #### Build Commands
 
-- Show builder usage
+Show builder usage
 
-  ```
-  $ make help
-  ```
+```
+$ make help
+```
+
+Build image
+
+```
+$ make build_img
+```
+
+Write image to SD card
+
+```
+$ make write_sd
+```
+
 
 ---
 
