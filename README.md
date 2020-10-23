@@ -75,6 +75,10 @@
     
     After building image done, you can use the command as below to
     show the information of the image. 
+
+    ```
+    $ make info
+    ```
     
   - Write image to SD card
 
