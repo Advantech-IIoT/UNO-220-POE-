@@ -28,3 +28,9 @@ modules_clean:
 	@rm -rf $(builddir)/modules
 	@rm -rf $(builddir)/.fetch_modules
 
+.PHONY: modules_install
+modules_install: $(builddir)/.install_modules
+
+.PHONY: modules_install_rtc
+modules_install_rtc: $(builddir)/.install_modules_rtc
+
