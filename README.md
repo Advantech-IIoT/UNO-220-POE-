@@ -10,7 +10,7 @@
 
 ---
 
-## Abouut Raspberry Pi 4
+## About Raspberry Pi 4
 
 - [Raspberry Pi 4 model b](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) 
 - [40 pins GPIO](https://www.raspberrypi.org/documentation/usage/gpio/)
@@ -28,6 +28,7 @@
 - TI TCA9554 IO extender
 - RTC RX-8010SJ-B
 - Serial to RS-232/485
+- Raspberry Pi 4 image base: 2020-08-20-raspios-buster-armhf-full.img
 
 ---
 
