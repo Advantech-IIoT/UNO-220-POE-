@@ -52,7 +52,7 @@
     ```
     $ git clone git@github.com:advantechralph/uno-220.git
     ```
-    or https
+    https
     ```
     $ git clone https://github.com/advantechralph/uno-220.git
     ```
