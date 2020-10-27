@@ -51,14 +51,14 @@
 
 #### Clone Builder Source
 
-ssh
-```
-$ git clone git@github.com:advantechralph/uno-220.git
-```
-https
-```
-$ git clone https://github.com/advantechralph/uno-220.git
-```
+- ssh
+  ```
+  $ git clone git@github.com:advantechralph/uno-220.git
+  ```
+- https
+  ```
+  $ git clone https://github.com/advantechralph/uno-220.git
+  ```
 
 #### Build Commands
 
@@ -97,14 +97,14 @@ $ git clone https://github.com/advantechralph/uno-220.git
 
 #### Clone Builder Source
 
-ssh
-```
-$ git clone git@github.com:advantechralph/uno-220.git
-```
-https
-```
-$ git clone https://github.com/advantechralph/uno-220.git
-```
+- ssh
+  ```
+  $ git clone git@github.com:advantechralph/uno-220.git
+  ```
+- https
+  ```
+  $ git clone https://github.com/advantechralph/uno-220.git
+  ```
 
 #### Build packages command
 
