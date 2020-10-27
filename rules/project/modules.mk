@@ -1,36 +1,46 @@
+
+define modulestemplate
+
+$(builddir)/kernel/$(1)/.fetch_modules: 
+	@cp -a $(currdir)/srcs/modules $(builddir)/kernel/$(1)
+	@touch $$@
+
+$(builddir)/kernel/$(1)/.build_modules_rtc: 
+	@make -C $(builddir)/kernel/$(1)/src O=$(builddir)/kernel/$(1)/build M=$(builddir)/kernel/$(1)/modules/rtc
+
+$(builddir)/kernel/$(1)/.install_modules_rtc: $(rootfs)
+	@make -C $(builddir)/kernel/$(1)/src O=$(builddir)/kernel/$(1)/build M=$(builddir)/kernel/$(1)/modules/rtc modules_install INSTALL_MOD_PATH=$(rootfs)
+
+$(builddir)/kernel/$(1)/.prepare_modules: $(builddir)/.prepare_compiler $(builddir)/kernel/$(1)/.prepare_kernel $(builddir)/kernel/$(1)/.fetch_modules 
+
+$(builddir)/kernel/$(1)/.build_modules: $(builddir)/kernel/$(1)/.prepare_modules $(builddir)/kernel/$(1)/.build_modules_rtc
+
+$(builddir)/kernel/$(1)/.install_modules: $(builddir)/kernel/$(1)/.install_modules_rtc
+
+$(builddir)/kernel/$(1)/.depmod_modules: 
+	@echo depmod -b $(rootfs) "$(1)" -A -a
+
+endef
+
+$(foreach v,$(allkernelversions),$(eval $(call modulestemplate,$(v))))
+
 .PHONY: modules
-
-$(builddir)/.fetch_modules: 
-	@cp -a $(currdir)/srcs/modules $(builddir)
-	@touch $@
-
-$(builddir)/.build_modules_rtc: 
-	@make -C $(kerneldir) O=$(kbuilddir) M=$(builddir)/modules/rtc
-
-$(builddir)/.install_modules_rtc: $(rootfs)
-	@make -C $(kerneldir) O=$(kbuilddir) M=$(builddir)/modules/rtc modules_install INSTALL_MOD_PATH=$(rootfs)
-
-$(builddir)/.prepare_modules: $(builddir)/.prepare_compiler $(builddir)/.prepare_kernel $(builddir)/.fetch_modules 
-
-$(builddir)/.build_modules: $(builddir)/.prepare_modules $(builddir)/.build_modules_rtc
-
-$(builddir)/.install_modules: $(builddir)/.install_modules_rtc
-
-$(builddir)/.depmod_modules: 
-	@depmod -b $(rootfs) "$(kernelversion)" -A -a
-
-.PHONY: modules
-modules: $(builddir)/.build_modules $(builddir)/.install_modules $(builddir)/.depmod_modules
+modules: $(foreach v,$(allkernelversions), \
+           $(builddir)/kernel/$(v)/.prepare_kernel \
+           $(builddir)/kernel/$(v)/.build_modules \
+           $(builddir)/kernel/$(v)/.install_modules \
+           $(builddir)/kernel/$(v)/.depmod_modules \
+           )
 	@echo "Build $@ done!!"
 
 .PHONY: modules_clean
 modules_clean: 
-	@rm -rf $(builddir)/modules
-	@rm -rf $(builddir)/.fetch_modules
+	@rm -rf $(builddir)/kernel/$(kernelversion)/modules
+	@rm -rf $(builddir)/kernel/$(kernelversion)/.fetch_modules
 
 .PHONY: modules_install
-modules_install: $(builddir)/.install_modules
+modules_install: $(builddir)/kernel/$(kernelversion)/.install_modules
 
 .PHONY: modules_install_rtc
-modules_install_rtc: $(builddir)/.install_modules_rtc
+modules_install_rtc: $(builddir)/kernel/$(kernelversion)/.install_modules_rtc
 

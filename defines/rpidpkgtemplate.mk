@@ -22,19 +22,35 @@ $(builddir)/dpkg/.patch_rpidpkg$(1):
 $(builddir)/dpkg/.postpatch_rpidpkg$(1): 
 
 $(builddir)/dpkg/.build_rpidpkg$(1):
-	@dpkg --build $(builddir)/dpkg/$(1) $(builddir)
+	@dpkg --build $(builddir)/dpkg/$(1) $(builddir)/dpkg
 
 $(builddir)/dpkg/.install_rpidpkg$(1): 
-	@[ -f "$(builddir)/$(dpkg$(1)name)_$(dpkg$(1)version)-$(dpkg$(1)revision)_$(dpkg$(1)arch).deb" ] && dpkg --install $(builddir)/$(dpkg$(1)name)_$(dpkg$(1)version)-$(dpkg$(1)revision)_$(dpkg$(1)arch).deb
+	@[ -f "$(builddir)/$(dpkg$(1)name)_$(dpkg$(1)version)-$(dpkg$(1)revision)_$(dpkg$(1)arch).deb" ] && dpkg --install $(builddir)/dpkg/$(dpkg$(1)name)_$(dpkg$(1)version)-$(dpkg$(1)revision)_$(dpkg$(1)arch).deb
+
+$(builddir)/dpkg/.clean_rpidpkg$(1): 
+	@rm -rf $(builddir)/dpkg/.*_rpidpkg$(1) $(builddir)/dpkg/$(1)
+	@rm -rf $(builddir)/dpkg/$(dpkg$(1)name)_$(dpkg$(1)version)-$(dpkg$(1)revision)_$(dpkg$(1)arch).deb
+
+.PHONY: rpidpkg$(1)_clean
+rpidpkg$(1)_clean: $(builddir)/dpkg/.clean_rpidpkg$(1)
 
 endef
 
 $(eval $(call rpidpkgtemplate,rtc))
 
-$(builddir)/dpkg/.postpatch_rpidpkgrtc: 
-	@make modules_install_rtc rootfs=$(builddir)/dpkg/rtc
+$(builddir)/dpkg/.postpatch_rpidpkgrtc: modules
+	@for v in $(allkernelversions); do make modules_install_rtc kernelversion=$${v} rootfs=$(builddir)/dpkg/rtc; done 
 	@sed -i "s/__kernel_version__/$(kernelversion)/" $(builddir)/dpkg/rtc/DEBIAN/*
 
 $(eval $(call rpidpkgtemplate,gpio))
 $(eval $(call rpidpkgtemplate,uart))
+
+.PHONY: dpkg
+dpkg: $(foreach d,rtc gpio uart,rpidpkg$(d))
+	@cd $(builddir)/dpkg && dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
+	@cd $(builddir)/dpkg && dpkg-scanpackages . /dev/null  > Packages
+
+.PHONY: dpkg_clean
+dpkg_clean: 
+	@rm -rf $(builddir)/dpkg
 

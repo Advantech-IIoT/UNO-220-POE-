@@ -33,23 +33,23 @@ define umountrpiimgsel
   )
 endef
 define mountrpiimg
-  $(call mountrpiimgsel,$(builddir)/boot,1); \
-  $(call mountrpiimgsel,$(builddir)/root,2)
+  $(call mountrpiimgsel,$(mountdir)/boot,1); \
+  $(call mountrpiimgsel,$(mountdir)/root,2)
 endef
 define umountrpiimg
-  $(call umountrpiimgsel,$(builddir)/boot); \
-  $(call umountrpiimgsel,$(builddir)/root)
+  $(call umountrpiimgsel,$(mountdir)/boot); \
+  $(call umountrpiimgsel,$(mountdir)/root)
 endef
 define mountboot
-  $(call mountrpiimgsel,$(builddir)/boot,1)
+  $(call mountrpiimgsel,$(mountdir)/boot,1)
 endef
 define mountroot
-  $(call mountrpiimgsel,$(builddir)/root,2)
+  $(call mountrpiimgsel,$(mountdir)/root,2)
 endef
 define umountboot
-  $(call umountrpiimgsel,$(builddir)/boot)
+  $(call umountrpiimgsel,$(mountdir)/boot)
 endef
 define umountroot
-  $(call umountrpiimgsel,$(builddir)/root)
+  $(call umountrpiimgsel,$(mountdir)/root)
 endef
 

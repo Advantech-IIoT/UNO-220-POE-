@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "__name__: ${BASH_SOURCE[0]}"
 currdir=$(dirname $(realpath ${BASH_SOURCE[0]}))
-if [ $RUNLEVEL -ne 1 ] ; then
+if [ -z $RUNLEVL ] || [ $RUNLEVEL -ne 1 ] ; then
   udevadm control --reload-rules && udevadm trigger
   modprobe i2c_dev
   modprobe rtc_rx8010

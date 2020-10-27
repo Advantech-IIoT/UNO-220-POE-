@@ -28,6 +28,10 @@ define imginfo
     printf "%-20s : %s bytes\n" "  size" "$$( $(call rpiimgsize,$(img),2))"; \
     $(call imginfoline) \
   fi; \
+  printf "%-20s : %s\n" "kernel versions" "$(allkernelversions)"; \
+  printf "%-20s : %s\n" "kernel version" "$(kernelversion)"; \
+  printf "%-20s : %s\n" "kernel source" "$(kerneldir)"; \
+  printf "%-20s : %s\n" "kernel branch" "$(kernelbranch)"; \
   echo ;
 endef
 

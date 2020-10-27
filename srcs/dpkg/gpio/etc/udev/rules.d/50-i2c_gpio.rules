@@ -2,4 +2,4 @@
 # I2C hardware device driver
 # ACTION=="add", KERNEL=="i2c_bcm2835", SUBSYSTEM=="module", TAG+="systemd"
 # ACTION=="add", KERNEL=="i2c_dev", SUBSYSTEM=="module", TAG+="systemd"
-ACTION=="add", KERNEL=="i2c-1", SUBSYSTEM=="i2c", ATTR{name}=="bcm2835 I2C adapter", ATTR{new_device}="pca9554 0x27"
+ACTION=="add", KERNEL=="i2c-1", SUBSYSTEM=="i2c", ATTR{name}=="bcm2835 I2C adapter|bcm2835 (i2c@*)", ATTR{new_device}="pca9554 0x27"

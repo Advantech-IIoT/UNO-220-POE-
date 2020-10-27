@@ -1,3 +1,3 @@
 define downloadfile
-  (curl -o $2 $1)
+  (mkdir -p $(builddir)/download && curl -o $2 $1)
 endef
