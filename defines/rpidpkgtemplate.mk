@@ -17,6 +17,7 @@ $(builddir)/dpkg/.patch_rpidpkg$(1):
 	@sed -i "s/__desc__/$(dpkg$(1)desc)/" $(builddir)/dpkg/$(1)/DEBIAN/*
 	@sed -i "s/__editor__/$(dpkg$(1)editor)/" $(builddir)/dpkg/$(1)/DEBIAN/*
 	@sed -i "s/__depends__/$(dpkg$(1)depends)/" $(builddir)/dpkg/$(1)/DEBIAN/*
+	@sed -i "s/__predepends__/$(dpkg$(1)predepends)/" $(builddir)/dpkg/$(1)/DEBIAN/*
 	@touch $$@
 
 $(builddir)/dpkg/.postpatch_rpidpkg$(1): 

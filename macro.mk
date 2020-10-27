@@ -59,6 +59,7 @@ dpkgrtcarch=armhf
 dpkgrtcdesc=Advantech UNO-220 (Raspberry Pi 4) IO Card RTC Package for EPSON RTC RX8010
 dpkgrtceditor=Ralph Wang <ralph.wang@advantech.com.tw>
 dpkgrtcdepends=sed (>=4.7-1)
+dpkgrtcpredepends=raspberrypi-kernel (<=1.20201022-1)
 dpkggpioname=uno220gpio
 dpkggpioversion=0.1
 dpkggpiorevision=2

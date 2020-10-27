@@ -4,3 +4,4 @@ Architecture: __arch__
 Description: __desc__
 Maintainer: __editor__
 Depends: __depends__
+Pre-Depends: __predepends__
