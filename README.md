@@ -34,107 +34,107 @@
 
 ## Build SD Card Image for Raspberry Pi 4 with UNO-220
 
-- ### Prerequisite
+### Prerequisite
 
-  - [Raspberry pi 4 model b](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/)
-  - [Image Builder from Github]()
-  - Advantech UNO-220 (IO extender)
-  - SD card (over 8GB recommanded)
-  - Host PC
-    - Ubuntu 18.04 x86_64 (recommanded)
-    - Packages needs to be installed in host Ubuntu.
-      ```
-      $ apt-get install -y bison flex libssl-dev
-      ```
-
-- ### Build Image
-
-  - #### Clone Builder Source
-
-    ssh
+- [Raspberry pi 4 model b](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/)
+- [Image Builder from Github]()
+- Advantech UNO-220 (IO extender)
+- SD card (over 8GB recommanded)
+- Host PC
+  - Ubuntu 18.04 x86_64 (recommanded)
+  - Packages needs to be installed in host Ubuntu.
     ```
-    $ git clone git@github.com:advantechralph/uno-220.git
-    ```
-    https
-    ```
-    $ git clone https://github.com/advantechralph/uno-220.git
+    $ apt-get install -y bison flex libssl-dev
     ```
 
-  - #### Build Commands
+### Build Image
+
+#### Clone Builder Source
+
+ssh
+```
+$ git clone git@github.com:advantechralph/uno-220.git
+```
+https
+```
+$ git clone https://github.com/advantechralph/uno-220.git
+```
+
+#### Build Commands
+
+- Show builder usage
+
+  ```
+  $ make help
+  ```
+
+- Build image
+  ```
+  $ make build_img
+  ```
+- Image information
   
-    - Show builder usage
+  After building image done, you can use the command as below to
+  show the information of the image. 
+
+  ```
+  $ make info
+  ```
   
-      ```
-      $ make help
-      ```
+- Write image to SD card
+
+  ```
+  $ make write_sd
+  ```
   
-    - Build image
-      ```
-      $ make build_img
-      ```
-    - Image information
-      
-      After building image done, you can use the command as below to
-      show the information of the image. 
-  
-      ```
-      $ make info
-      ```
-      
-    - Write image to SD card
-  
-      ```
-      $ make write_sd
-      ```
-      
-      Then, follow the prompt to write image to SD card. 
+  Then, follow the prompt to write image to SD card. 
 
 ---
 
 ## Build UNO-220 Debian packages for the official Raspberry Pi Images
 
-- ### Build Packages
+### Build Packages
 
-  - #### Clone Builder Source
+#### Clone Builder Source
 
-    ssh
-    ```
-    $ git clone git@github.com:advantechralph/uno-220.git
-    ```
-    https
-    ```
-    $ git clone https://github.com/advantechralph/uno-220.git
-    ```
+ssh
+```
+$ git clone git@github.com:advantechralph/uno-220.git
+```
+https
+```
+$ git clone https://github.com/advantechralph/uno-220.git
+```
 
-  - #### Build packages command
+#### Build packages command
 
-    ```
-    $ make dpkg
-    $ ls build/dpkg/*.deb
-    build/dpkg/uno220gpio_0.1-2_armhf.deb  build/dpkg/uno220rtc_0.1-2_armhf.deb  build/dpkg/uno220uart_0.1-2_armhf.deb
-    ```
+```
+$ make dpkg
+$ ls build/dpkg/*.deb
+build/dpkg/uno220gpio_0.1-2_armhf.deb  build/dpkg/uno220rtc_0.1-2_armhf.deb  build/dpkg/uno220uart_0.1-2_armhf.deb
+```
 
-    The version of packages depends on the image builder version. 
+The version of packages depends on the image builder version. 
 
-  - #### Install packages
+#### Install packages
 
-    Before install uno-220 packages, please enable ssh and console for the Raspberry Pi 4. 
-    Then, upload deb files up to Raspberry Pi 4 and install packages by commands as below. 
+Before install uno-220 packages, please enable ssh and console for the Raspberry Pi 4. 
+Then, upload deb files up to Raspberry Pi 4 and install packages by commands as below. 
 
-    Install rtc package first, and it will install driver module and enable i2c in the
-    '/boot/config.txt'. 
-    
-    ```
-    pi@raspberrypi:~$ sudo dpkg -i uno220rtc_0.1-2_armhf.deb
-    ```
+Install rtc package first, and it will install driver module and enable i2c in the
+'/boot/config.txt'. 
 
-    After install rtc package, please reboot yout Pi for enabling i2c.  
-    After Pi boot up, install the rest of packages for gpio and serial. 
+```
+pi@raspberrypi:~$ sudo dpkg -i uno220rtc_0.1-2_armhf.deb
+```
 
-    ```
-    pi@raspberrypi:~$ sudo dpkg -i uno220gpio_0.1-2_armhf.deb
-    pi@raspberrypi:~$ sudo dpkg -i uno220uart_0.1-2_armhf.deb
-    ```
+After install rtc package, please reboot yout Pi for enabling i2c.  
+After Pi boot up, install the rest of packages for gpio and serial. 
+
+```
+pi@raspberrypi:~$ sudo dpkg -i uno220gpio_0.1-2_armhf.deb
+pi@raspberrypi:~$ sudo dpkg -i uno220uart_0.1-2_armhf.deb
+```
 
 
 
