@@ -37,6 +37,7 @@ rpidpkg$(1)_clean: $(builddir)/dpkg/.clean_rpidpkg$(1)
 
 endef
 
+$(eval $(call rpidpkgtemplate,config))
 $(eval $(call rpidpkgtemplate,rtc))
 
 $(builddir)/dpkg/.postpatch_rpidpkgrtc: modules
@@ -47,7 +48,7 @@ $(eval $(call rpidpkgtemplate,gpio))
 $(eval $(call rpidpkgtemplate,uart))
 
 .PHONY: dpkg
-dpkg: $(foreach d,rtc gpio uart,rpidpkg$(d))
+dpkg: $(foreach d,config rtc gpio uart,rpidpkg$(d))
 	@cd $(builddir)/dpkg && dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
 	@cd $(builddir)/dpkg && dpkg-scanpackages . /dev/null  > Packages
 

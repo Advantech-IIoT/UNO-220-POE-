@@ -25,6 +25,31 @@ dumpreg(){
   printf "\n\n" 
 }
 
+
+# Raspberry Pi 40 GPIO pins map
+#                                                                    
+#           3V3  (1)  (2)  5V                                            
+#   (SDA) GPIO2  (3)  (4)  5V                                            
+#   (SCL) GPIO3  (5)  (6)  GND                                           
+#         GPIO4  (7)  (8)  GPIO14 (TXD)                                  
+#           GND  (9)  (10) GPIO15 (RXD)                                  
+#        GPIO17 (11)  (12) GPIO18 (PCM_CLK)                               
+#        GPIO27 (13)  (14) GND                                            
+#        GPIO22 (15)  (16) GPIO23                                         
+#           3V3 (17)  (18) GPIO24                                         
+#               (19)  (20)                                               
+#               (21)  (22)                                                
+#               (23)  (24)                                                
+#               (25)  (26)                                                
+#               (27)  (28)                                                
+#               (29)  (30)                                               
+#               (31)  (32)                                                
+#               (33)  (34)                                                
+#               (35)  (36)                                                
+#               (37)  (38)                                                
+#               (39)  (40)                                               
+#                                                                        
+
 #
 # GPIO Registers Base : 7E215000 
 #

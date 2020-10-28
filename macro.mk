@@ -52,6 +52,13 @@ export SHELL=/bin/bash
 ##################################
 # dpkg                           #
 ##################################
+dpkgconfigname=uno220config
+dpkgconfigversion=0.1
+dpkgconfigrevision=2
+dpkgconfigarch=armhf
+dpkgconfigdesc=Advantech UNO-220 (Raspberry Pi 4) IO Card RTC Package for config.txt and cmdline.txt
+dpkgconfigeditor=Ralph Wang <ralph.wang@advantech.com.tw>
+dpkgconfigdepends=sed (>=4.7-1)
 dpkgrtcname=uno220rtc
 dpkgrtcversion=0.1
 dpkgrtcrevision=2
