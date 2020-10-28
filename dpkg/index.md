@@ -1,6 +1,6 @@
 # UNO-220 Debian Packages
 
-## Create Packages and Packages.gz
+## Generate Packages and Packages.gz commands
 
 ```
 $ dpkg-scanpackages . /dev/null  | gzip -9c > Packages.gz
