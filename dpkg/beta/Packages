@@ -1,0 +1,49 @@
+Package: uno220config
+Version: 0.1-3
+Architecture: armhf
+Maintainer: Ralph Wang <ralph.wang@advantech.com.tw>
+Depends: sed (>=4.7-1)
+Filename: ./uno220config_0.1-3_armhf.deb
+Size: 1056
+MD5sum: 91750c4e4da2af40bee5279923080f79
+SHA1: cef3e889fcd19ddf40afa301eebce7e0eb90206f
+SHA256: 917702c773cbb644b0ac05b3a560544668d64562cef90347f85ecf9566585517
+Description: Advantech UNO-220 (Raspberry Pi 4) IO Card RTC Package for config.txt and cmdline.txt
+
+Package: uno220gpio
+Version: 0.1-3
+Architecture: armhf
+Maintainer: Ralph Wang <ralph.wang@advantech.com.tw>
+Depends: sed (>=4.7-1)
+Filename: ./uno220gpio_0.1-3_armhf.deb
+Size: 2728
+MD5sum: ff9fbe5d0c39ee37dadf9e0ad927e43d
+SHA1: 612d906bb743847bceda6a641b1a26a7587134e9
+SHA256: 4fdd058b1734be3de206e6cdbd8fd1a2fa97b61812e9417085b87cbaa8861650
+Description: Advantech UNO-220 (Raspberry PI 4) IO Card GPIO EXPANDER for TI TCA9554
+
+Package: uno220rtc
+Version: 0.1-3
+Architecture: armhf
+Maintainer: Ralph Wang <ralph.wang@advantech.com.tw>
+Pre-Depends: raspberrypi-kernel (<=1.20201022-1)
+Depends: sed (>=4.7-1)
+Filename: ./uno220rtc_0.1-3_armhf.deb
+Size: 6472
+MD5sum: 54554aed9ac8e632753427f35b72fcc2
+SHA1: 17a3acb4f1c728e0e8a789f88905c14208aec922
+SHA256: 85964df190d24f193698ffe0b693058e8aabe6b40c5ea0598e3fc870c2b1d930
+Description: Advantech UNO-220 (Raspberry Pi 4) IO Card RTC Package for EPSON RTC RX8010
+
+Package: uno220uart
+Version: 0.1-3
+Architecture: armhf
+Maintainer: Ralph Wang <ralph.wang@advantech.com.tw>
+Depends: sed (>=4.7-1)
+Filename: ./uno220uart_0.1-3_armhf.deb
+Size: 6236
+MD5sum: 900234fe803960f6107430dbd3768b59
+SHA1: 8d74f70022d3bef02749d746d2771539ee5e0783
+SHA256: 4286f6138695d42d5e22df6abc6579b9b226fe6c74e15f4fabb5900ad2510524
+Description: Advantech UNO-220 (Raspberry PI 4) UART Tools
+
