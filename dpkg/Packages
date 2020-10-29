@@ -4,10 +4,10 @@ Architecture: armhf
 Maintainer: Ralph Wang <ralph.wang@advantech.com.tw>
 Depends: sed (>=4.7-1)
 Filename: ./uno220config_0.1-2_armhf.deb
-Size: 1056
-MD5sum: 17e4c838b1c00b9e0ab26b6fc6c1711f
-SHA1: ca5c9cbd9bb8285411257f3de443d99bda0ada22
-SHA256: 2c060212a402f5560d0ddc89914656b353cf0ed97ffe518e7e90908508afed7d
+Size: 1068
+MD5sum: 6900cd7d25c2287336b07ec95a9f4704
+SHA1: b18757c0aed67c7dfe59da6c32628d6606b39a75
+SHA256: f7878dd9630087b1abb28b1de2be176f5108ab65b0897e0a2b1cf1b3b8225c8b
 Description: Advantech UNO-220 (Raspberry Pi 4) IO Card RTC Package for config.txt and cmdline.txt
 
 Package: uno220gpio
@@ -16,10 +16,10 @@ Architecture: armhf
 Maintainer: Ralph Wang <ralph.wang@advantech.com.tw>
 Depends: sed (>=4.7-1)
 Filename: ./uno220gpio_0.1-2_armhf.deb
-Size: 2728
-MD5sum: 44dc307810754fdecbddb06d3e59b4b1
-SHA1: 873d0b4b064a5c5f9cefcbad34adf8a649cb2d84
-SHA256: 5201440b387963f943531ec68e64a643716006f4bd049273993f32f44c8ff748
+Size: 2724
+MD5sum: 14e899ed3f6c2fd444002964f2c6caf9
+SHA1: 39ca86b11371d72eb6ecb42efa256766cf0f8d3f
+SHA256: 2f934c30d5c49386b168968beb8b9f433bdddc1aa1431ded645a5fe8d8567df9
 Description: Advantech UNO-220 (Raspberry PI 4) IO Card GPIO EXPANDER for TI TCA9554
 
 Package: uno220rtc
@@ -29,10 +29,10 @@ Maintainer: Ralph Wang <ralph.wang@advantech.com.tw>
 Pre-Depends: raspberrypi-kernel (<=1.20201022-1)
 Depends: sed (>=4.7-1)
 Filename: ./uno220rtc_0.1-2_armhf.deb
-Size: 6456
-MD5sum: d39c0d284785951626e41117e2618916
-SHA1: da40f49e431b93b263d302411971e838517a5e37
-SHA256: 80916909c59c9d339322cdb09574df9051b5d738c1d202b1206c9ed554113cb1
+Size: 6476
+MD5sum: 0342425d1eca1e7ff1ddb77bad6c2079
+SHA1: 34330a52af09dd522b6825839027da5bed32c18d
+SHA256: 36bb24776a597f204bba56c8c23e1f1925572c840f73726659718aacd32f6c84
 Description: Advantech UNO-220 (Raspberry Pi 4) IO Card RTC Package for EPSON RTC RX8010
 
 Package: uno220uart
@@ -42,8 +42,8 @@ Maintainer: Ralph Wang <ralph.wang@advantech.com.tw>
 Depends: sed (>=4.7-1)
 Filename: ./uno220uart_0.1-2_armhf.deb
 Size: 6236
-MD5sum: 6f859607ba5ee55d424ef3e6daf2d4bc
-SHA1: 459648adb7b0d072d16ad1712943bbf7634a984c
-SHA256: a4dc85cebce94800aac547d4a1feaf5cef20818cebea507fdde47f27cfd3cc54
+MD5sum: 533146577171e5160decbfcde7ecb766
+SHA1: c363b4c9068549d16cd676e619af8020e39f74eb
+SHA256: a353cbfef034c0d5afa68db0e75accdffabae7ba123cdaf0c9f5844535c5d00b
 Description: Advantech UNO-220 (Raspberry PI 4) UART Tools
 
