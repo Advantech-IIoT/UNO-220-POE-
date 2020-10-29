@@ -1,7 +1,7 @@
 # UNO-220 Raspberry Pi 4 Image Builder Release Notes
 
-- Version: 0.0.1
-- Date: 2020/10/23
+- Version: 0.0.2
+- Date: 2020/10/27
 ---
 
 ## Feature List 
@@ -14,6 +14,9 @@
 ---
 
 ## Change List
+ - Version 0.0.2 (2020/10/27): 
+   - RTC driver supports for multiple kernel versions and the latest version 1.20201022-1. 
+   - Add Debian packages for rtc, serial and gpio. 
  - Version 0.0.1 (2020/10/23): 
    - Image base changed to 2020-08-20-raspios-buster-armhf-full.img. 
  - Version 0.0.1 (2020/04/30): 
