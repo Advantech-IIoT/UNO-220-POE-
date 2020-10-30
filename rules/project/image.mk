@@ -27,6 +27,16 @@ mount_img:
 umount_img: 
 	@$(call umountrpiimg)
 
+.PHONY: mount_dpkg_img
+mount_dpkg_img: 
+	@$(call mountrpiimgsel,$(mountdir)/root,2)
+	@$(call mountrpiimgsel,$(mountdir)/root/boot,1)
+
+.PHONY: umount_dpkg_img
+umount_dpkg_img: 
+	@$(call umountrpiimgsel,$(mountdir)/root/boot,1)
+	@$(call umountrpiimgsel,$(mountdir)/root,2)
+
 .PHONY: enable_i2c_config
 enable_i2c_config:
 	@$(call rpienablei2cconfig,$(mountdir)/boot/config.txt)
@@ -109,5 +119,32 @@ build_img: \
 	modules \
 	rootclone \
 	umount_img \
+	checksum_img
+
+.PHONY: install_dpkg_img
+install_dpkg_img: 
+	@cp -a $(currdir)/tools/qemu-arm-static $(mountdir)/root/usr/bin
+	@sed -i -e "s/\$${PLATFORM}/v7l/" $(mountdir)/root/etc/ld.so.preload 
+	@sed -i -e "/uno-220/d" -e '$$adeb [trusted=yes] https://advantechralph.github.io/uno-220/dpkg/ /' $(mountdir)/root/etc/apt/sources.list
+	@RUNLEVEL=1 chroot $(mountdir)/root apt-get update
+	@RUNLEVEL=1 chroot $(mountdir)/root apt-get install -y uno220config
+	@RUNLEVEL=1 chroot $(mountdir)/root apt-get install -y uno220rtc uno220gpio uno220uart
+	@RUNLEVEL=1 chroot $(mountdir)/root apt-get autoclean
+	@sed -i -e "s/v7l/\$${PLATFORM}/" $(mountdir)/root/etc/ld.so.preload 
+	@rm -rf $(mountdir)/root/usr/bin/qemu-arm-static
+
+.PHONY: chroot_dpkg_img
+chroot_dpkg_img: 
+	@cp -a $(currdir)/tools/qemu-arm-static $(mountdir)/root/usr/bin
+	@sed -i -e "s/\$${PLATFORM}/v7l/" $(mountdir)/root/etc/ld.so.preload 
+	@RUNLEVEL=1 chroot $(mountdir)/root bash
+
+.PHONY: build_dpkg_img
+build_dpkg_img: \
+	clean_img \
+	fetch_img \
+	mount_dpkg_img \
+	install_dpkg_img \
+	umount_dpkg_img \
 	checksum_img
 

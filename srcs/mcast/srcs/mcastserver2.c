@@ -56,7 +56,7 @@ int main()
 
    // receive packet from socket
    status = recvfrom(sock, buffer, MAXBUFSIZE, 0, 
-                     (struct sockaddr *)&saddr, (size_t *)&socklen);
+                     (struct sockaddr *)&saddr, (unsigned int *)&socklen);
 
    // printf received buffer content
    buffer[status]='\0'; 

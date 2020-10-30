@@ -15,7 +15,7 @@ Usage:
 
   $ make                             - show this usage
   $ make help                        - show this usage
-  $ make fetch_img                   - fetch and unpack image        
+  $ make build                       - build all sources             
 
 endef
 export usage_str
