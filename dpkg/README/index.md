@@ -4,7 +4,11 @@
 
 - Current version: 0.1-2
 - Supported image: 
-  - [raspios_lite_armhf-2020-08-24](http://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2020-08-24/)
+  - [raspbian_full-2019-09-30](http://downloads.raspberrypi.org/raspbian_full/images/raspbian_full-2019-09-30/)
+  - [raspbian_full-2020-02-07](http://downloads.raspberrypi.org/raspbian_full/images/raspbian_full-2020-02-07/)
+  - [raspbian_full-2020-02-14](http://downloads.raspberrypi.org/raspbian_full/images/raspbian_full-2020-02-14/)
+  - [raspios_full_armhf-2020-05-28](http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2020-05-28/)
+  - [raspios_full_armhf-2020-08-24](http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2020-08-24/)
 
 ## How to Install UNO-220 Packages
 
