@@ -133,11 +133,36 @@ install_dpkg_img:
 	@sed -i -e "s/v7l/\$${PLATFORM}/" $(mountdir)/root/etc/ld.so.preload 
 	@rm -rf $(mountdir)/root/usr/bin/qemu-arm-static
 
-.PHONY: chroot_dpkg_img
-chroot_dpkg_img: 
+define chk_n_mount
+  if [ $$(mountpoint -q $(1); echo $$?;) -eq 0 ]; then \
+     umount $(1); \
+  fi
+endef
+
+.PHONY: choot_start
+choot_start: fetch_img mount_dpkg_img
 	@cp -a $(currdir)/tools/qemu-arm-static $(mountdir)/root/usr/bin
 	@sed -i -e "s/\$${PLATFORM}/v7l/" $(mountdir)/root/etc/ld.so.preload 
+	@$(call chk_n_mount,$(mountdir)/root/dev/pts)
+	@$(call chk_n_mount,$(mountdir)/root/dev)
+	@$(call chk_n_mount,$(mountdir)/root/proc)
+	@$(call chk_n_mount,$(mountdir)/root/sys)
+	@mount -o bind /dev $(mountdir)/root/dev
+	@mount -o bind /dev/pts $(mountdir)/root/dev/pts
+	@mount -t proc proc $(mountdir)/root/proc
+	@mount -t sysfs sys $(mountdir)/root/sys
 	@RUNLEVEL=1 chroot $(mountdir)/root bash
+
+.PHONY: choot_stop
+choot_stop: 
+	@sed -i -e "s/v7l/\$${PLATFORM}/" $(mountdir)/root/etc/ld.so.preload 
+	@rm -rf $(mountdir)/root/usr/bin/qemu-arm-static
+	@$(call chk_n_mount,$(mountdir)/root/dev/pts)
+	@$(call chk_n_mount,$(mountdir)/root/dev)
+	@$(call chk_n_mount,$(mountdir)/root/proc)
+	@$(call chk_n_mount,$(mountdir)/root/sys)
+	@$(call chk_n_mount,$(mountdir)/root/boot)
+	@$(call chk_n_mount,$(mountdir)/root)
 
 .PHONY: build_dpkg_img
 build_dpkg_img: \
