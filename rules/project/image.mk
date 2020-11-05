@@ -139,8 +139,8 @@ define chk_n_mount
   fi
 endef
 
-.PHONY: choot_start
-choot_start: fetch_img mount_dpkg_img
+.PHONY: chroot_start
+chroot_start: fetch_img mount_dpkg_img
 	@cp -a $(currdir)/tools/qemu-arm-static $(mountdir)/root/usr/bin
 	@sed -i -e "s/\$${PLATFORM}/v7l/" $(mountdir)/root/etc/ld.so.preload 
 	@$(call chk_n_mount,$(mountdir)/root/dev/pts)
@@ -153,8 +153,8 @@ choot_start: fetch_img mount_dpkg_img
 	@mount -t sysfs sys $(mountdir)/root/sys
 	@RUNLEVEL=1 chroot $(mountdir)/root bash
 
-.PHONY: choot_stop
-choot_stop: 
+.PHONY: chroot_stop
+chroot_stop: 
 	@sed -i -e "s/v7l/\$${PLATFORM}/" $(mountdir)/root/etc/ld.so.preload 
 	@rm -rf $(mountdir)/root/usr/bin/qemu-arm-static
 	@$(call chk_n_mount,$(mountdir)/root/dev/pts)
