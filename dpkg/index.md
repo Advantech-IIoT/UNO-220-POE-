@@ -32,3 +32,4 @@ $ dpkg-scanpackages . /dev/null  | gzip -9c > Packages.gz
 $ dpkg-scanpackages . /dev/null  > Packages
 ```
 
+###### tags: `uno220`, `raspberrypi`
