@@ -60,3 +60,5 @@ for UNO-220 IO on Raspberry Pi 4.
   Then, follow the prompt to write image to SD card. 
 
 ---
+
+###### tags: `uno220`, `raspberrypi`
