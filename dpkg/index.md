@@ -1,8 +1,10 @@
-# UNO-220 Debian Packages
+# UNO-220 Debian Packages Builder
 
-## Build packages command
+## Quick Start
 
-```
+```shell=
+$ git clone https://github.com/advantechralph/uno-220.git
+$ cd uno-220
 $ make dpkg
 $ ls build/dpkg/*.deb
 build/dpkg/uno220config_0.1-2_armhf.deb build/dpkg/uno220gpio_0.1-2_armhf.deb  build/dpkg/uno220rtc_0.1-2_armhf.deb  build/dpkg/uno220uart_0.1-2_armhf.deb
