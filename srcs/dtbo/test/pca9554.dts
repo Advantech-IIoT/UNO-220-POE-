@@ -1,0 +1,25 @@
+/dts-v1/;
+/plugin/;
+
+/{
+	compatible = "brcm,bcm2711";
+
+	fragment@0 {
+		target = <&i2c_arm>;
+		__overlay__ {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			status = "okay";
+			pca9554: pca9554@39 {
+				compatible = "ti,pca9554";
+				reg = <0x27>;
+				gpio-controller;
+				#gpio-cells = <2>;
+			};
+		};
+	};
+
+	__overrides__ {
+		addr = <&pca9554>,"reg:0";
+	};
+};
