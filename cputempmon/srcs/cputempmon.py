@@ -37,9 +37,9 @@ def led_init(led) :
   print("gpio %d blinking testing..."%(led))
   for i in range(5) : 
     led_control(0, CPUTEMPMONGPIO)
-    time.sleep(0.2)
+    time.sleep(0.1)
     led_control(1, CPUTEMPMONGPIO)
-    time.sleep(0.2)
+    time.sleep(0.1)
 
 def measure_temp(montemp):
   fd = os.open("/sys/class/thermal/thermal_zone0/temp", os.O_RDONLY)
