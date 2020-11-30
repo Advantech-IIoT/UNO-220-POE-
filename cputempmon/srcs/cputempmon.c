@@ -170,7 +170,7 @@ int getconfigs(int argc, char **argv){
   initconfigs(basename(argv[0]));
   while (1) {
     int option_index = 0;
-    c = getopt_long(argc, argv, "?hbkt:p:", long_options, &option_index);
+    c = getopt_long(argc, argv, "?hbkt:p:g:", long_options, &option_index);
     if (c == -1)
       break;
 
@@ -186,6 +186,9 @@ int getconfigs(int argc, char **argv){
         break;
       case 't':
 	sscanf(optarg, "%f", &configs.temp);
+        break;
+      case 'g':
+	sscanf(optarg, "%d", &configs.gpio);
         break;
       case 'p':
 	configs.pidfile = optarg; 
@@ -285,6 +288,7 @@ void led_init(void){
       usleep(100000);
     }
   }
+  led_control(0);
 }
 
 void measure_temp(float level){

@@ -18,9 +18,7 @@ $(builddir)/$(1)/.prepare_$(1):
 	@cp -a $(foreach s,$($(1)_sources),$(srcsdir)/$(s)) $(builddir)/$(1)
 	@touch $$@
 
-
 $(builddir)/$(1)/.compile_source_$(1): $($(1)_objs)
-	@$(1)_objs=$($(1)_objs)
 
 $(foreach s,$($(1)_sources),$(eval $(call objruletemplate,$(1),$(s))))
 
