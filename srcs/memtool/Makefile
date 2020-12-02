@@ -12,7 +12,7 @@ TARGET=$(BUILDDIR)/memtool
 TARGET_SRCS=$(CURRDIR)/memtool.c
 # export CC_PATH ARCH CROSS_COMPILE PATH CC SHELL
 
-all: $(BUILDDIR) $(TARGET)
+all build: $(BUILDDIR) $(TARGET)
 	
 $(BUILDDIR): 
 	@mkdir -p $@
