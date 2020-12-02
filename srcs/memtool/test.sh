@@ -5,13 +5,14 @@ hex2bin(){
   printf "%s" $bin
 }
 
-
 regbinmap(){
-  bin=$(hex2bin $(/root/memtool -32 $1 1 | grep ":" | sed -e 's/^[^:]*:[ ]*//')) 
+  bin=$(hex2bin $(sudo ~/memtool -32 $1 1 | grep ":" | sed -e 's/^[^:]*:[ ]*//')) 
   
   count=$(printf "%s" $bin | wc -c)
   prepend=$(( 32 - $count ))
-  printf "0%.0s" $(seq 1 1 $prepend)
+  if [ $prepend -gt 0 ] ; then
+    printf "0%.0s" $(seq 1 1 $prepend)
+  fi
   printf "%s" $bin
 }
 
@@ -65,5 +66,11 @@ dumpreg(){
 # 0x30 -Reserved- 0x34 GPLEV0 GPIO Pin Level 0  
 # 0x38 GPLEV1 GPIO Pin Level 1
 
-dumpreg 7E215004
+# From datasheet, the address is not working on system. 
+# sudo dumpreg 7E215004
+
+# for gpio function, please use the command as below. 
+# cat /sys/kernel/debug/pinctrl/fe200000.gpio-pinctrl-bcm2835/pins
+
+dumpreg fe200004
 
