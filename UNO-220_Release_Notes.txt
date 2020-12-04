@@ -1,7 +1,7 @@
 ##################################################################
 #             UNO-220 Raspberry Pi 4 Image Builder               #
 #                        Release Notes                           #
-#                Version: 0.0.2 Date: 2020/10/27                 #
+#                Version: 0.0.3 Date: 2020/12/04                 #
 ##################################################################
 ------------------------------------------------------------------
  Feature List 
@@ -12,6 +12,9 @@
  - Based on 2020-08-20-raspios-buster-armhf-full.img
 ------------------------------------------------------------------
  Change List
+ - Version 0.0.3 (2020/12/04): 
+   - Enable Infineon TPM SLx9670. 
+   - CPU temperature monitor sample code (C & Python) and C binary testing tool. 
  - Version 0.0.2 (2020/10/27): 
    - RTC driver supports for multiple kernel versions and the latest version 1.20201022-1. 
    - Add Debian packages for rtc, serial and gpio. 
@@ -27,7 +30,13 @@
 ------------------------------------------------------------------
  Image Builder Usage
 
- $ make help
+ - Show Usage
+
+   $ make help
+
+ - Build UNO-220 Debian image
+
+   $ make build_img
 
 ------------------------------------------------------------------
  Write image to SD card

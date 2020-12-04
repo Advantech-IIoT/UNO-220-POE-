@@ -24,10 +24,10 @@ endef
 
 define writerpisd
   echo "Please select disk to write image? ($$($(call listrpisd)))"; \
-  read -s disk; \
+  read disk; \
   echo "Disk '$$disk' is selected."; \
   echo "Are you sure to write image into '$$disk'? (y/n)"; \
-  read -s ans; \
+  read ans; \
   if [ "$$ans" == "y"  ] ; then \
     dd if=$(img) of=/dev/$${disk} bs=10240 status=progress; \
   else \

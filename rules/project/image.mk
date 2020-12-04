@@ -17,7 +17,9 @@ $(img):
 
 .PHONY: clean_img
 clean_img: 
-	@cd $(releasedir) && rm -rf $(imgname)*
+	@if [ -d $(releasedir) ] ; then \
+          cd $(releasedir) && rm -rf $(imgname)*; \
+	fi
 
 .PHONY: mount_img
 mount_img: 

@@ -1,8 +1,14 @@
 #!/bin/bash
 app=$(basename $0)
-label=pca9554
+pattern='\(1-0027\|pca9554\)'
+label=$(ls /sys/class/gpio/gpiochip*/label | xargs grep -l -e $pattern)
 pins=8
-gpiodir=$(dirname $(ls /sys/class/gpio/gpiochip*/label | xargs grep -l $label ))
+gpiodir=$([ ${label:-x} == "x" ] || dirname $label)
+if [ ${gpiodir:-x} == "x" ] ; then
+  echo GPIO expander is not ready!! Please check the driver or bus....
+  echo Bye!!
+  exit 0; 
+fi
 base=$(cat $gpiodir/base)
 usage(){
 cat << EOF
@@ -99,7 +105,7 @@ valuePin(){
   if [ "$2" != "" ]; then
     echo ${2} > /sys/class/gpio/gpio$(($base + $1))/value
   else
-    cat /sys/class/gpio/gpio$(($base + $1))/value
+    echo "cat /sys/class/gpio/gpio$(($base + $1))/value"
   fi
 }
 exportAllPins(){

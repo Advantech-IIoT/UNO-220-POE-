@@ -1,7 +1,12 @@
 # UNO-220 Raspberry Pi 4 Image Builder Release Notes
 
-- Version: 0.0.2
-- Date: 2020/10/27
+- Version: 0.0.3
+- Date: 2020/12/04
+- Editor: Ralph Wang
+- Emails: 
+  - Ralph.Wang@advantech.com
+  - advantechralph@gmail.com
+
 ---
 
 ## Feature List 
@@ -10,10 +15,15 @@
  - TI TCA9554 IO extender
  - Serial to RS-232/485
  - Based on 2020-08-20-raspios-buster-armhf-full.img
+ - Infineon TPM SLx9670. 
+ - CPU temperature monitor sample code (C & Python) and C binary testing tool. 
 
 ---
 
 ## Change List
+ - Version 0.0.3 (2020/12/04): 
+   - Enable Infineon TPM SLx9670. 
+   - CPU temperature monitor sample code (C & Python) and C binary testing tool. 
  - Version 0.0.2 (2020/10/27): 
    - RTC driver supports for multiple kernel versions and the latest version 1.20201022-1. 
    - Add Debian packages for rtc, serial and gpio. 

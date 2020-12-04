@@ -28,7 +28,7 @@ $(1):
 endef
 
 .PHONY: all clean
-all: clean $(targets)
+all build: clean $(targets)
 
 clean: 
 	@rm -rf host_* uno220uart*

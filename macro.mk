@@ -21,7 +21,7 @@ mountdir=$(builddir)/mount
 rootfs=$(mountdir)/root
 img=$(releasedir)/$(imgname)
 sector=512
-rootclone=$(rootclone$(imgver))
+rootclone=root20190926 rootAdvantech
 ##################################
 # kernel                         #
 ##################################

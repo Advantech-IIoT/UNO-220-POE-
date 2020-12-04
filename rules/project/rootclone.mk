@@ -2,5 +2,12 @@
 .PHONY: rootclone
 rootclone: $(builddir)/.rootclone
 
-$(builddir)/.rootclone: $(rootfs)
-	@( tar -C $(rootclone) --numeric-owner -zcpvf - . | tar -C $(rootfs) -zxpvf - ) > /dev/null 2>&1
+define rootclonetemplate
+$(builddir)/.rootclone_$(1): $(rootfs)
+	@( tar -C $(currdir)/srcs/root/$(1) --numeric-owner -zcpvf - . | tar -C $(rootfs) -zxpvf - ) > /dev/null 2>&1
+endef
+
+$(foreach r,$(rootclone),$(eval $(call rootclonetemplate,$(r))))
+
+$(builddir)/.rootclone: $(foreach r,$(rootclone),$(builddir)/.rootclone_$(r))
+

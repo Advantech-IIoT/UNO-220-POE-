@@ -18,7 +18,7 @@ $(builddir)/kernel/$(1)/.build_modules: $(builddir)/kernel/$(1)/.prepare_modules
 $(builddir)/kernel/$(1)/.install_modules: $(builddir)/kernel/$(1)/.install_modules_rtc
 
 $(builddir)/kernel/$(1)/.depmod_modules: 
-	@echo depmod -b $(rootfs) "$(1)" -A -a
+	@depmod -b $(rootfs) "$(1)" -A -a
 
 endef
 

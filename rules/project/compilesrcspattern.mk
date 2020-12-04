@@ -25,4 +25,5 @@ endef
 $(eval $(call compilesrcspattern,mcast))
 $(eval $(call compilesrcspattern,memtool))
 $(eval $(call compilesrcspattern,serialtest))
+$(eval $(call compilesrcspattern,cputempmon))
 
