@@ -28,8 +28,10 @@ def led_init(led) :
     if len(filter(lambda _s: re.search("sysfs", _s), nl)) > 0 :
       print("GPIO %d is controlled by sysfs"%(led))
     else :
-      print("GPIO %d is not controlled by sysfs. \nPlease check if GPIO %d is controlled by other driver"%(led, led))
-      exit(1)
+      # TODO: check if gpio controled by other driver. 
+      # print("GPIO %d is not controlled by sysfs. \nPlease check if GPIO %d is controlled by other driver"%(led, led))
+      # exit(1)
+      os.system("echo %d > /sys/class/gpio/export"%(led));
   else : 
     os.system("echo %d > /sys/class/gpio/export"%(led));
   os.system("echo out > /sys/class/gpio/gpio%d/direction"%(led));
@@ -76,19 +78,37 @@ def main() :
 
 def usage():
   usage_str="""
-Usage: 
-
-    %s [OPTION] [COMMAND]
-
-OPTION: 
-
-    -h, --help
-        Show this usage
-
+                                                           
+  Usage:                                                   
+     %s [OPTION] [ARGV]                                    
+                                                           
+  OPTION:                                                  
+    -h, --help                                             
+      Show this usage.                                     
+    -b, --background                                       
+      Background mode.                                     
+    -d, --debug                                            
+      Debug mode.                                          
+    -k, --stop                                             
+      Stop background service.                             
+    -g, --gpio                                             
+      Set GPIO indicator.                                  
+      Default: GPIO%d                                      
+    -t, --temp                                             
+      Set warning temperature.                             
+      Default: 50.0C                                      
+    -T, --time                                             
+      Set pooling time.                                    
+      Default: 5 sec                                       
+    -p, --pidfile                                          
+      Set pid file                                         
+      Default: %s                                          
+                                                           
 """
-  print(usage_str%(sys.argv[0]))
+  print(usage_str%(sys.argv[0], 12, "/var/run/cputempmon-py.pid"))
+  sys.exit(0)
 
-def configs(argv) : 
+def configsfunc(argv) : 
   global MONTEMP, CPUTEMPMONGPIO, BG
   try : 
     opts, args = getopt.getopt(argv, "hbg:t:", ["help", "background", "gpio=", "temp="])
@@ -126,11 +146,29 @@ def atexit_func() :
 #  print("pid %d: exit!!"%(os.getpid()))
   syslog.closelog()
 
+class configs: 
+  def __init__(self):
+    print(__name__)
+  def parse(slef, argv) : 
+    global MONTEMP, CPUTEMPMONGPIO, BG
+    try : 
+      opts, args = getopt.getopt(argv, "hbg:t:", ["help", "background", "gpio=", "temp="])
+      for opt, arg in opts :
+  #      print("opt: %s, arg: %s"%(str(opt), str(arg)))
+        if opt in ("-h", "--help") :
+          usage()
+        elif opt in ("-t", "--temp") :
+          MONTEMP = float(arg) 
+        elif opt in ("-g", "--gpio") :
+          CPUTEMPMONGPIO = int(arg)
+        elif opt in ("-b", "--background") :
+          BG = 1
+    except getopt.GetoptError : 
+      print("getopt error!!\nbye...")
+      sys.exit(2)
+    info()
+
 if __name__ == '__main__' :
-  signal.signal(signal.SIGINT, signal_int_handler)
-  atexit.register(atexit_func)
-  configs(sys.argv[1:])
-  syslog.openlog("%s"%(os.path.basename(sys.argv[0])), syslog.LOG_LOCAL0 | syslog.LOG_PID)
-  main()
+  print(__name__)
 
 
