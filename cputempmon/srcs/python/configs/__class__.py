@@ -49,7 +49,8 @@ class configs:
     except getopt.GetoptError : 
       print("getopt error!!\nbye...")
       sys.exit(2)
-    self['info']()
+    if self['debug'] == 1 : 
+      self['info']()
   def usage(self):
     usage_str="""
                                                            
@@ -86,3 +87,4 @@ class configs:
     for k, v in self.argv.items(): 
       print("  %s : %s"%(str(k), str(v)))
 
+__all__ = ['configs']

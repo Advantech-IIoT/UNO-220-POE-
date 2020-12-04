@@ -1,4 +1,4 @@
-import os, re, time
+import os, sys, re, time
 def check_gpio_sysfs() :
   ret = os.access("/sys/kernel/debug/gpio", os.R_OK)
   if ret == False: 
@@ -35,3 +35,4 @@ def init(led) :
   #   time.sleep(0.1)
   control(0, led)
 
+__all__ = ['check_gpio_sysfs', 'control', 'init']

@@ -15,13 +15,6 @@ class fork:
       self.argv[k] = v
     if self['debug'] == 1 : 
       self.info()
-    if os.access(self['pidfile'], os.W_OK) : 
-      fp = file(self['pidfile'], "a+")
-      fp.close()
-    else :
-      print("No permission to create pidfile - '%s'. "%(self['pidfile']))
-      print('Bye. ');
-      sys.exit(1)
     # atexit.register(self.atexit_func)
   def atexit_func(self) : 
     print("atexit_func()")
@@ -40,9 +33,14 @@ class fork:
       print("  %s : %s"%(k, v))
     print("################################")
   def appendpid(self) :
-    fp = file(self['pidfile'], "a+")
-    fp.write("%s\n"%(str(os.getpid())))
-    fp.close()
+    if os.access(self['pidfile'], os.W_OK) : 
+      fp = file(self['pidfile'], "a+")
+      fp.write("%s\n"%(str(os.getpid())))
+      fp.close()
+    else :
+      print("No permission to create pidfile - '%s'. "%(self['pidfile']))
+      print('Bye. ');
+      sys.exit(1)
   def run(self, bg=0):
     if os.access(self['pidfile'], os.F_OK) == True : 
       os.remove(self['pidfile'])
@@ -66,4 +64,4 @@ class fork:
       os.system("cat %s | xargs kill -9 > /dev/null 2>&1"%(self["pidfile"]))
       os.remove(self['pidfile'])
 
-
+__all__ = ['fork']
