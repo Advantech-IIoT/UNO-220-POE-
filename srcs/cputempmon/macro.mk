@@ -1,10 +1,10 @@
-builddir=$(currdir)/build
+builddir=$(shell realpath -m $(currdir)/../../build)
 srcsdir=$(currdir)/srcs
 incdir=$(currdir)/inc
 ##################################
 # compiler                       #
 ##################################
-compilerdir=$(shell realpath -m $(currdir)/../../build/compiler)
+compilerdir=$(builddir)/compiler
 compilerurl=https://github.com/raspberrypi/tools.git 
 compilerbranch=master
 ##################################
