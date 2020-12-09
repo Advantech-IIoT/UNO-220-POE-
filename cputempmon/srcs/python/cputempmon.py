@@ -30,6 +30,7 @@ if __name__ == '__main__' :
   c.getopt(sys.argv[1:])
   f['parent'] = parentfunc 
   f['child'] = childfunc 
+  f['pidfile'] = c['pidfile'] 
   syslog.openlog("%s"%(os.path.basename(sys.argv[0])), syslog.LOG_LOCAL0 | syslog.LOG_PID)
   led.init(c['gpio'])
   f.run(c['bg'])
