@@ -33,6 +33,9 @@ class fork:
       print("  %s : %s"%(k, v))
     print("################################")
   def appendpid(self) :
+    fp = file(self['pidfile'], "a+")
+    if fp != None: 
+      fp.close()
     if os.access(self['pidfile'], os.W_OK) : 
       fp = file(self['pidfile'], "a+")
       fp.write("%s\n"%(str(os.getpid())))

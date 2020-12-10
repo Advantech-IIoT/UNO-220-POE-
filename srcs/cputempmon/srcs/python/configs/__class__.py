@@ -15,8 +15,7 @@ class configs:
     }
     for k, v in argv.items(): 
       self.argv[k] = v
-    if self['debug'] == 1 : 
-      self.info()
+    self.info()
   def __setitem__(self,k,v): 
     self.argv[k] = v
   def __getitem__(self,k): 
