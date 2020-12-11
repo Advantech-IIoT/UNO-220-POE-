@@ -15,8 +15,15 @@
 
 Append the following in `/etc/apt/sources.list` on your Pi 4. 
 
+
 ```
 deb [trusted=yes] https://advantechralph.github.io/uno-220/dpkg/ /
+```
+
+For Ubuntu 20.04 arm64: 
+
+```
+deb [trusted=yes] https://advantechralph.github.io/uno-220/dpkg/arm64/ /
 ```
 
 Run `apt-get update`
