@@ -1,0 +1,48 @@
+Package: uno220config
+Version: 0.1-2
+Architecture: arm64
+Maintainer: Ralph Wang <ralph.wang@advantech.com.tw>
+Depends: sed (>=4.7-1)
+Filename: ./uno220config_0.1-2_arm64.deb
+Size: 1124
+MD5sum: 780a39b7f011e7eaee94283a88314fae
+SHA1: 907d3be4714e344df54f6b80785b7254b71cfb10
+SHA256: f697ee0ee8bb588091ce22c22763e8ee7ef8ae18c9ff503a613fb16fc712c2b9
+Description: Advantech UNO-220 (Raspberry Pi 4) IO Card RTC Package for config.txt and cmdline.txt
+
+Package: uno220gpio
+Version: 0.1-2
+Architecture: arm64
+Maintainer: Ralph Wang <ralph.wang@advantech.com.tw>
+Depends: sed (>=4.7-1)
+Filename: ./uno220gpio_0.1-2_arm64.deb
+Size: 2728
+MD5sum: 2dd2a6e1e2302a19f1702f7c4af644a6
+SHA1: aac7830b53219aed5ce7e57dccf3dd0e91212a1a
+SHA256: 179587d2b1f1159751dd797e361b5aa6ac8729f352186e09710e281094c1a222
+Description: Advantech UNO-220 (Raspberry PI 4) IO Card GPIO EXPANDER for TI TCA9554
+
+Package: uno220rtc
+Version: 0.1-2
+Architecture: arm64
+Maintainer: Ralph Wang <ralph.wang@advantech.com.tw>
+Depends: sed (>=4.7-1)
+Filename: ./uno220rtc_0.1-2_arm64.deb
+Size: 8548
+MD5sum: f48ce2c71fce244b8559ff11b9d00dad
+SHA1: b245b7b083bc4849195534d4c8daf0c75ef1d2d1
+SHA256: 9139f2030b85a6573c50a0696a2cc09865d91517ab0761467cfd5338fa640c72
+Description: Advantech UNO-220 (Raspberry Pi 4) IO Card RTC Package for EPSON RTC RX8010
+
+Package: uno220uart
+Version: 0.1-2
+Architecture: arm64
+Maintainer: Ralph Wang <ralph.wang@advantech.com.tw>
+Depends: sed (>=4.7-1)
+Filename: ./uno220uart_0.1-2_arm64.deb
+Size: 6236
+MD5sum: 0fcee5632ff19b1ed63df5528e41c217
+SHA1: 3eff6de1c012078b5e954cdef82930b29c670e59
+SHA256: 3bfefd86a517bf1633d69f70d527980d88494fb3ba92e8b52bd09e50995e6eae
+Description: Advantech UNO-220 (Raspberry PI 4) UART Tools
+
