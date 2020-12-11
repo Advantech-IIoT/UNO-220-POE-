@@ -46,6 +46,7 @@ $(eval $(call rpidpkgtemplate,rtc))
 
 $(eval $(call rpidpkgtemplate,gpio))
 $(eval $(call rpidpkgtemplate,uart))
+$(eval $(call rpidpkgtemplate,test))
 
 .PHONY: dpkg
 dpkg: $(foreach d,config rtc gpio uart,rpidpkg$(d))

@@ -35,3 +35,11 @@ dpkguartarch=arm64
 dpkguartdesc=Advantech UNO-220 (Raspberry PI 4) UART Tools
 dpkguarteditor=Ralph Wang <ralph.wang@advantech.com.tw>
 dpkguartdepends=sed (>=4.7-1)
+dpkgtestname=uno220test
+dpkgtestversion=0.1
+dpkgtestrevision=2
+dpkgtestarch=arm64
+dpkgtestdesc=Advantech UNO-220 (Raspberry Pi 4) IO Card RTC Package for EPSON RTC RX8010
+dpkgtesteditor=Ralph Wang <ralph.wang@advantech.com.tw>
+dpkgtestdepends=sed (>=4.7-1)
+dpkgtestpredepends=

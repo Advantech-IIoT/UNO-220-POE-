@@ -11,10 +11,11 @@ for v in ${kernel_versions}; do
   if [ "${curr_kernel_version}" == "$v" ] ; then
     hunt=1
   fi
+#  ret=$(dpkg -l linux-image-${v} > /dev/null 2>&1; echo $?;)
+#  [ $ret -eq 0 ] && echo $v=yes || echo $v=no ;
 done
 
 if [ $hunt -ne 1 ] ; then
-  echo "ERROR: Current system kernel version is not supported!!!!"
   exit 1; 
 fi
 
