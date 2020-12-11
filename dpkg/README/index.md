@@ -10,6 +10,7 @@
   - [raspbian_full-2020-02-14](http://downloads.raspberrypi.org/raspbian_full/images/raspbian_full-2020-02-14/)
   - [raspios_full_armhf-2020-05-28](http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2020-05-28/)
   - [raspios_full_armhf-2020-08-24](http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2020-08-24/)
+  - [Raspberry Pi Generic (64-bit ARM) preinstalled server image (2020/07/31)](https://cdimage.ubuntu.com/releases/20.04.1/release/ubuntu-20.04.1-preinstalled-server-arm64+raspi.img.xz)
 
 ## How to Install UNO-220 Packages
 
