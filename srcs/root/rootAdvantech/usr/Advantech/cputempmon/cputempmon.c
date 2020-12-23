@@ -14,6 +14,7 @@ typedef struct cputempmon_configs_s {
   int bg; 
   int debug; 
   int gpio; 
+  int time; 
   float temp; 
   const char *pidfile; 
 } cputempmon_configs; 
@@ -112,6 +113,9 @@ const char usage_fmt[]=" \
     -t, --temp                                             \n\
       Set warning temperature.                             \n\
       Default: 50.0°C                                      \n\
+    -T, --time                                             \n\
+      Set pooling time.                                    \n\
+      Default: 5 sec                                       \n\
     -p, --pidfile                                          \n\
       Set pid file                                         \n\
       Default: %s                                          \n\
@@ -125,7 +129,8 @@ void usage_func(void){
 
 static struct option long_options[] = {
   {"temp",        1, 0, 't'},
-  {"pid",         1, 0, 'p'},
+  {"time",        1, 0, 'T'},
+  {"pidfile",     1, 0, 'p'},
   {"gpio",        1, 0, 'g'},
   {"background",  0, 0, 'b'},
   {"debug",       0, 0, 'd'},
@@ -137,6 +142,7 @@ static struct option long_options[] = {
 void showconfigs(void){
   printf("%s configurations:\n", configs.name);
   printf("  %-20s: %.3f\n", "temp", configs.temp);
+  printf("  %-20s: %d\n", "time", configs.time);
   printf("  %-20s: %s\n", "pidfile", configs.pidfile);
   printf("  %-20s: %d\n", "bg", configs.bg);
   printf("  %-20s: %d\n", "gpio", configs.gpio);
@@ -150,6 +156,7 @@ void initconfigs(char *name){
   configs.pidfile = default_pidfile; 
   configs.debug = 0; 
   configs.gpio = CPUTEMPMONGPIO; 
+  configs.time = 5; 
 }
 
 void removepidfile(void){
@@ -170,7 +177,7 @@ int getconfigs(int argc, char **argv){
   initconfigs(basename(argv[0]));
   while (1) {
     int option_index = 0;
-    c = getopt_long(argc, argv, "?hbkt:p:g:", long_options, &option_index);
+    c = getopt_long(argc, argv, "?hbkd:T:t:p:g:", long_options, &option_index);
     if (c == -1)
       break;
 
@@ -186,6 +193,9 @@ int getconfigs(int argc, char **argv){
         break;
       case 't':
 	sscanf(optarg, "%f", &configs.temp);
+        break;
+      case 'T':
+	sscanf(optarg, "%d", &configs.time);
         break;
       case 'g':
 	sscanf(optarg, "%d", &configs.gpio);
@@ -265,21 +275,23 @@ void led_init(void){
     ret = pclose(fp);
     if(WEXITSTATUS(ret) == 0){
       if(strstr((const char*)buf, "sysfs") != NULL){
-        printf("gpio-%d controlled by sysfs\n", configs.gpio);
+        show_message("gpio-%d controlled by sysfs\n", configs.gpio);
       }else{
+#if 0
         printf("gpio-%d controlled by other driver...\n", configs.gpio);
 	exit(-1);
+#else
+        SYSTEM("echo %d > /sys/class/gpio/export", configs.gpio);
+#endif
       }
     }else{
-      printf("gpio-%d not controlled\n", configs.gpio);
-      sprintf(cmdBuf, "echo %d > /sys/class/gpio/export", configs.gpio);
-      system(cmdBuf);
-      sprintf(cmdBuf, "echo out > /sys/class/gpio/gpio%d/direction", configs.gpio);
-      system(cmdBuf);
-      sprintf(cmdBuf, "echo 1 > /sys/class/gpio/gpio%d/active_low", configs.gpio);
-      system(cmdBuf);
+      show_message("gpio-%d not controlled\n", configs.gpio);
+      SYSTEM("echo %d > /sys/class/gpio/export", configs.gpio);
     }
+    SYSTEM("echo out > /sys/class/gpio/gpio%d/direction", configs.gpio);
+    SYSTEM("echo 1 > /sys/class/gpio/gpio%d/active_low", configs.gpio);
     // led init indicator
+#if 0
     int i = 0; 
     for(i = 0; i < 5; i++){
       led_control(0);
@@ -287,6 +299,7 @@ void led_init(void){
       led_control(1);
       usleep(100000);
     }
+#endif
   }
   led_control(0);
 }
@@ -326,7 +339,7 @@ int main(int argc, char *argv[]){
     while(1){
       // measure_temp_test2();
       measure_temp(configs.temp);
-      sleep(5);
+      sleep(configs.time);
     }
   }else{
     if(configs.bg == 1){

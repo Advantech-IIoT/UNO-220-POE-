@@ -19,9 +19,11 @@ imgurl=$(img$(imgtype)url$(imgver))
 releasedir=$(builddir)/release
 mountdir=$(builddir)/mount
 rootfs=$(mountdir)/root
+bootfs=$(mountdir)/boot
 img=$(releasedir)/$(imgname)
 sector=512
 rootclone=root20190926 rootAdvantech
+bootclone=tpm
 ##################################
 # kernel                         #
 ##################################

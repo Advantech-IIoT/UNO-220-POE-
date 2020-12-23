@@ -104,6 +104,7 @@ build_dev_img: \
 	enable_ssh_config \
 	disable_force_hdmi_hotplug \
 	modules \
+	bootclone \
 	rootclone \
 	umount_img \
 	checksum_img
@@ -119,6 +120,7 @@ build_img: \
 	enable_ssh_config \
 	enable_force_hdmi_hotplug \
 	modules \
+	bootclone \
 	rootclone \
 	umount_img \
 	checksum_img

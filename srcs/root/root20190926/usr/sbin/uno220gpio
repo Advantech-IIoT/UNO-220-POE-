@@ -105,7 +105,7 @@ valuePin(){
   if [ "$2" != "" ]; then
     echo ${2} > /sys/class/gpio/gpio$(($base + $1))/value
   else
-    echo "cat /sys/class/gpio/gpio$(($base + $1))/value"
+    cat /sys/class/gpio/gpio$(($base + $1))/value
   fi
 }
 exportAllPins(){

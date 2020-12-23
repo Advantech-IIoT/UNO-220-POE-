@@ -25,7 +25,7 @@ endef
 $(foreach v,$(allkernelversions),$(eval $(call modulestemplate,$(v))))
 
 .PHONY: modules
-modules: $(foreach v,$(allkernelversions), \
+modules: compiler $(foreach v,$(allkernelversions), \
            $(builddir)/kernel/$(v)/.prepare_kernel \
            $(builddir)/kernel/$(v)/.build_modules \
            $(builddir)/kernel/$(v)/.install_modules \
