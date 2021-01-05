@@ -10,21 +10,18 @@
   - [raspbian_full-2020-02-14](http://downloads.raspberrypi.org/raspbian_full/images/raspbian_full-2020-02-14/)
   - [raspios_full_armhf-2020-05-28](http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2020-05-28/)
   - [raspios_full_armhf-2020-08-24](http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2020-08-24/)
-  - [Raspberry Pi Generic (64-bit ARM) preinstalled server image (2020/07/31)](https://cdimage.ubuntu.com/releases/20.04.1/release/ubuntu-20.04.1-preinstalled-server-arm64+raspi.img.xz)
 
 ## How to Install UNO-220 Packages
 
 Append the following in `/etc/apt/sources.list` on your Pi 4. 
 
-
 ```
 deb [trusted=yes] https://advantechralph.github.io/uno-220/dpkg/ /
 ```
 
-For Ubuntu 20.04 arm64: 
-
+For beta testing packages
 ```
-deb [trusted=yes] https://advantechralph.github.io/uno-220/dpkg/arm64/ /
+deb [trusted=yes] https://advantechralph.github.io/uno-220/dpkg/beta /
 ```
 
 Run `apt-get update`
@@ -37,6 +34,11 @@ Install packages.
 
 ```
 $ sudo apt-get install uno220config uno220rtc uno220gpio uno220uart
+```
+
+Optional packages
+```
+$ sudo apt-get install uno220tpm uno220cputempmon
 ```
 
 Reboot your Pi 4 and test IO. 
