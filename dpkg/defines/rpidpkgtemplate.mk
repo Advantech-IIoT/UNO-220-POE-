@@ -46,9 +46,11 @@ $(eval $(call rpidpkgtemplate,rtc))
 
 $(eval $(call rpidpkgtemplate,gpio))
 $(eval $(call rpidpkgtemplate,uart))
+$(eval $(call rpidpkgtemplate,tpm))
+$(eval $(call rpidpkgtemplate,cputempmon))
 
 .PHONY: dpkg
-dpkg: $(foreach d,config rtc gpio uart,rpidpkg$(d))
+dpkg: $(foreach d,$(dpkgs),rpidpkg$(d))
 	@cd $(builddir)/dpkg && dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
 	@cd $(builddir)/dpkg && dpkg-scanpackages . /dev/null  > Packages
 

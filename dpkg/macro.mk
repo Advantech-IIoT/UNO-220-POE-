@@ -6,6 +6,7 @@ builddir=$(shell realpath -m $(currdir)/build)
 ##################################
 # dpkg                           #
 ##################################
+dpkgs=config rtc gpio uart tpm cputempmon
 dpkgconfigname=uno220config
 dpkgconfigversion=0.1
 dpkgconfigrevision=2
@@ -35,3 +36,17 @@ dpkguartarch=armhf
 dpkguartdesc=Advantech UNO-220 (Raspberry PI 4) UART Tools
 dpkguarteditor=Ralph Wang <ralph.wang@advantech.com.tw>
 dpkguartdepends=sed (>=4.7-1)
+dpkgtpmname=uno220tpm
+dpkgtpmversion=0.1
+dpkgtpmrevision=1
+dpkgtpmarch=armhf
+dpkgtpmdesc=Advantech UNO-220 (Raspberry Pi 4) IO Card TPM Package
+dpkgtpmeditor=Ralph Wang <ralph.wang@advantech.com.tw>
+dpkgtpmdepends=sed (>=4.7-1)
+dpkgcputempmonname=uno220cputempmon
+dpkgcputempmonversion=0.1
+dpkgcputempmonrevision=1
+dpkgcputempmonarch=armhf
+dpkgcputempmondesc=Advantech UNO-220 (Raspberry Pi 4) IO Card CPU Temperature Monitor Sample Code Package
+dpkgcputempmoneditor=Ralph Wang <ralph.wang@advantech.com.tw>
+dpkgcputempmondepends=sed (>=4.7-1)
