@@ -1,5 +1,5 @@
 
-# UNO-220 
+# UNO-220
 
 ---
 
@@ -23,7 +23,7 @@
 
 ---
 
-## About UNO-220
+## About UNO-220 
 
 - TI TCA9554 IO extender
 - RTC RX-8010SJ-B
@@ -35,5 +35,9 @@
 - [UNO-220 Advantech Image Builder](https://advantechralph.github.io/uno-220/imagebuilder/)
 - [Debian Package for Official Image](https://advantechralph.github.io/uno-220/dpkg/README/)
 - [How to Test UNO-220](https://advantechralph.github.io/uno-220/dpkg/TEST/)
+- Sample Codes & References
+    - [CPU Temperature monitor](https://advantechralph.github.io/uno-220/sample_codes/cputempmon/)
+    - [SD Card (mmc0) Activity LED control](https://advantechralph.github.io/uno-220/sample_codes/mmcactled/)
+
 
 ###### tags: `uno220`, `raspberrypi`
