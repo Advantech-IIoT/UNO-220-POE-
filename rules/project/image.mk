@@ -47,6 +47,22 @@ enable_i2c_config:
 disable_i2c_config:
 	@$(call rpidisablei2cconfig,$(mountdir)/boot/config.txt)
 
+.PHONY: enable_spi_config
+enable_spi_config:
+	@$(call rpienablespiconfig,$(mountdir)/boot/config.txt)
+
+.PHONY: disable_spi_config
+disable_spi_config:
+	@$(call rpidisablespiconfig,$(mountdir)/boot/config.txt)
+
+.PHONY: enable_tpm_config
+enable_tpm_config:
+	@$(call rpienabletpmconfig,$(mountdir)/boot/config.txt)
+
+.PHONY: disable_tpm_config
+disable_tpm_config:
+	@$(call rpidisabletpmconfig,$(mountdir)/boot/config.txt)
+
 .PHONY: enable_console_cmdline
 enable_console_cmdline:
 	@$(call rpienableconsolecmdline,$(mountdir)/boot/cmdline.txt)
@@ -119,6 +135,8 @@ build_img: \
 	enable_i2c_config \
 	enable_ssh_config \
 	enable_force_hdmi_hotplug \
+	enable_spi_config \
+	enable_tpm_config \
 	modules \
 	bootclone \
 	rootclone \

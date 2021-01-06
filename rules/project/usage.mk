@@ -26,6 +26,8 @@ Advanced usage:
 
   $ make mount_img                   - mount image configs and rootfs paritition to build/boot and build/root
   $ make umount_img                  - umount build/boot and build/root
+  $ make mount_dpkg_img              - mount image configs and rootfs paritition to build/root/boot and build/root
+  $ make umount_dpkg_img             - umount build/root/boot and build/root
   $ make write_sd                    - write image to SD ccard           
   $ make rpidpkgrtc                  - build UNO-220 rtc Debrain package for pure Raspberry Pi image        
   $ make rpidpkggpio                 - build UNO-220 gpio Debrain package for pure Raspberry Pi image        

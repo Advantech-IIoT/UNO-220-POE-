@@ -12,10 +12,11 @@
  - Based on 2020-08-20-raspios-buster-armhf-full.img
 ------------------------------------------------------------------
  Change List
+ - Version 0.0.3 (2021/01/05): 
+   - Enable Infineon TPM SLx9670. 
  - Version 0.0.3 (2020/12/23): 
    - Update Infineon TPM SLx9670 device tree overlay. 
  - Version 0.0.3 (2020/12/04): 
-   - Enable Infineon TPM SLx9670. 
    - CPU temperature monitor sample code (C & Python) and C binary testing tool. 
  - Version 0.0.2 (2020/10/27): 
    - RTC driver supports for multiple kernel versions and the latest version 1.20201022-1. 

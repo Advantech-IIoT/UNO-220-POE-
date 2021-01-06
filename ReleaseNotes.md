@@ -1,7 +1,7 @@
 # UNO-220 Raspberry Pi 4 Image Builder Release Notes
 
 - Version: 0.0.3
-- Date: 2020/12/04
+- Date: 2021/01/05
 - Editor: Ralph Wang
 - Emails: 
   - Ralph.Wang@advantech.com
@@ -21,8 +21,11 @@
 ---
 
 ## Change List
- - Version 0.0.3 (2020/12/04): 
+ - Version 0.0.3 (2021/01/05): 
    - Enable Infineon TPM SLx9670. 
+ - Version 0.0.3 (2020/12/23): 
+   - Update Infineon TPM SLx9670 device tree overlay. 
+ - Version 0.0.3 (2020/12/04): 
    - CPU temperature monitor sample code (C & Python) and C binary testing tool. 
  - Version 0.0.2 (2020/10/27): 
    - RTC driver supports for multiple kernel versions and the latest version 1.20201022-1. 

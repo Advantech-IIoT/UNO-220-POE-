@@ -1,3 +1,4 @@
+# config.txt: i2c
 define rpienablei2cconfig
   ( \
     sed -i -e '/dtparam=i2c_arm=on/s/^[\t #]*//' $1; \
@@ -8,6 +9,7 @@ define rpidisablei2cconfig
     sed -i -e '/dtparam=i2c_arm=on/s/^/#/' $1; \
   )
 endef
+# cmdline.txt: console 
 define rpidisableconsolecmdline
   ( sed -i -e "s/console=[^ ]*//g" -e "s/^ *//" $(1) )
 endef
@@ -17,12 +19,32 @@ endef
 define rpidisableconsoleconfig
   ( sed -i -e '/enable_uart=1/d' $(1) )
 endef
+# config.txt: uart
 define rpienableconsoleconfig
   ( sed -i -e '/enable_uart=1/d' -e '/\[all\]/aenable_uart=1' $(1) )
 endef
 define rpidisableforcehdmihotplug
   ( sed -i -e 's/.*hdmi_force_hotplug=.*/#hdmi_force_hotplug=1/' $(1) )
 endef
+# config.txt: hdmi
 define rpienableforcehdmihotplug
   ( sed -i -e 's/.*hdmi_force_hotplug=.*/hdmi_force_hotplug=1/' $(1) )
+endef
+define rpienablespiconfig
+  ( \
+    sed -i -e '/dtparam=spi=on/s/^[\t #]*//' $1; \
+  )
+endef
+# config.txt: spi
+define rpidisablespiconfig
+  ( \
+    sed -i -e '/dtparam=spi=on/s/^/#/' $1; \
+  )
+endef
+# config.txt: tpm-slb9670
+define rpidisabletpmconfig
+  ( sed -i -e '/dtoverlay=tpm-slb9670/d' $(1) )
+endef
+define rpienabletpmconfig
+  ( sed -i -e '/dtoverlay=tpm-slb9670/d' -e '/\[all\]/adtoverlay=tpm-slb9670' $(1) )
 endef
