@@ -63,6 +63,14 @@ enable_tpm_config:
 disable_tpm_config:
 	@$(call rpidisabletpmconfig,$(mountdir)/boot/config.txt)
 
+.PHONY: enable_uno220gpio_config
+enable_uno220gpio_config:
+	@$(call rpienableuno220gpioconfig,$(mountdir)/boot/config.txt)
+
+.PHONY: disable_uno220gpio_config
+disable_uno220gpio_config:
+	@$(call rpidisableuno220gpioconfig,$(mountdir)/boot/config.txt)
+
 .PHONY: enable_console_cmdline
 enable_console_cmdline:
 	@$(call rpienableconsolecmdline,$(mountdir)/boot/cmdline.txt)
@@ -137,6 +145,7 @@ build_img: \
 	enable_force_hdmi_hotplug \
 	enable_spi_config \
 	enable_tpm_config \
+	enable_uno220gpio_config \
 	modules \
 	bootclone \
 	rootclone \

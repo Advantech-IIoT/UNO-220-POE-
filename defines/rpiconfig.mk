@@ -48,3 +48,10 @@ endef
 define rpienabletpmconfig
   ( sed -i -e '/dtoverlay=tpm-slb9670/d' -e '/\[all\]/adtoverlay=tpm-slb9670' $(1) )
 endef
+# config.txt: uno220-gpio
+define rpidisableuno220gpioconfig
+  ( sed -i -e '/dtoverlay=uno220-gpio/d' $(1) )
+endef
+define rpienableuno220gpioconfig
+  ( sed -i -e '/dtoverlay=uno220-gpio/d' -e '/\[all\]/adtoverlay=uno220-gpio' $(1) )
+endef
