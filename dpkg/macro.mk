@@ -6,7 +6,7 @@ builddir=$(shell realpath -m $(currdir)/build)
 ##################################
 # dpkg                           #
 ##################################
-dpkgs=config rtc gpio uart tpm cputempmon
+dpkgs=config rtc gpio uart tpm cputempmon gpiopins
 dpkgconfigname=uno220config
 dpkgconfigversion=0.1
 dpkgconfigrevision=2
@@ -16,12 +16,12 @@ dpkgconfigeditor=Ralph Wang <ralph.wang@advantech.com.tw>
 dpkgconfigdepends=sed (>=4.7-1)
 dpkgrtcname=uno220rtc
 dpkgrtcversion=0.1
-dpkgrtcrevision=2
+dpkgrtcrevision=3
 dpkgrtcarch=armhf
 dpkgrtcdesc=Advantech UNO-220 (Raspberry Pi 4) IO Card RTC Package for EPSON RTC RX8010
 dpkgrtceditor=Ralph Wang <ralph.wang@advantech.com.tw>
 dpkgrtcdepends=sed (>=4.7-1)
-dpkgrtcpredepends=raspberrypi-kernel (<=1.20201022-1)
+dpkgrtcpredepends=raspberrypi-kernel (<=1.20201126-1)
 dpkggpioname=uno220gpio
 dpkggpioversion=0.1
 dpkggpiorevision=2
@@ -50,3 +50,10 @@ dpkgcputempmonarch=armhf
 dpkgcputempmondesc=Advantech UNO-220 (Raspberry Pi 4) IO Card CPU Temperature Monitor Sample Code Package
 dpkgcputempmoneditor=Ralph Wang <ralph.wang@advantech.com.tw>
 dpkgcputempmondepends=sed (>=4.7-1)
+dpkggpiopinsname=uno220gpiopins
+dpkggpiopinsversion=0.1
+dpkggpiopinsrevision=1
+dpkggpiopinsarch=armhf
+dpkggpiopinsdesc=Advantech UNO-220 (Raspberry Pi 4) IO Card GPIO Pins Package
+dpkggpiopinseditor=Ralph Wang <ralph.wang@advantech.com.tw>
+dpkggpiopinsdepends=sed (>=4.7-1)

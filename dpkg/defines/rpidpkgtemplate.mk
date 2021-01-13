@@ -48,6 +48,7 @@ $(eval $(call rpidpkgtemplate,gpio))
 $(eval $(call rpidpkgtemplate,uart))
 $(eval $(call rpidpkgtemplate,tpm))
 $(eval $(call rpidpkgtemplate,cputempmon))
+$(eval $(call rpidpkgtemplate,gpiopins))
 
 .PHONY: dpkg
 dpkg: $(foreach d,$(dpkgs),rpidpkg$(d))
