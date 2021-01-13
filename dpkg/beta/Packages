@@ -1,13 +1,13 @@
 Package: uno220config
-Version: 0.1-3
+Version: 0.1-2
 Architecture: armhf
 Maintainer: Ralph Wang <ralph.wang@advantech.com.tw>
 Depends: sed (>=4.7-1)
-Filename: ./uno220config_0.1-3_armhf.deb
-Size: 1056
-MD5sum: 91750c4e4da2af40bee5279923080f79
-SHA1: cef3e889fcd19ddf40afa301eebce7e0eb90206f
-SHA256: 917702c773cbb644b0ac05b3a560544668d64562cef90347f85ecf9566585517
+Filename: ./uno220config_0.1-2_armhf.deb
+Size: 1124
+MD5sum: 04b8e171ac830ded8fa355edbee348d4
+SHA1: 6607e67ccec5289401a6f23f346befa51d3249aa
+SHA256: 4edf4b1c598ccbd56275d15ac27935b15a455d67faf282e4a0c8621e68f951cd
 Description: Advantech UNO-220 (Raspberry Pi 4) IO Card RTC Package for config.txt and cmdline.txt
 
 Package: uno220cputempmon
