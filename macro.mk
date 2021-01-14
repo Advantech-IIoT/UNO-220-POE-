@@ -7,8 +7,8 @@ builddir=$(shell realpath -m $(currdir)/build)
 # image                          #
 ##################################
 include images.info
-# imgver: 20190926, 20200205, 20200213, 20200527, 20200820, 20201202
-imgver=20201202
+# imgver: 20190926, 20200205, 20200213, 20200527, 20200820, 20201202, 20210111
+imgver=20210111
 # imgtype=full     # Full Desktop image
 # imgtype=         # Normal Desktop image
 # imgtype=lite     # Lite image

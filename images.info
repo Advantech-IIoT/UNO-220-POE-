@@ -1,5 +1,26 @@
 
 # Desktop Full Info
+# Raspberry Pi reference 2021-01-11
+# Generated using pi-gen, https://github.com/RPi-Distro/pi-gen, 21090519d85bdaa1615d5d5057d37b09368ea5d2, stage5
+# 
+# Firmware: https://github.com/raspberrypi/firmware/tree/0d458874a89921fbe460e422b239695e1e101e2b
+# Kernel: https://github.com/raspberrypi/linux/tree/76c49e60e742d0bebd798be972d67dd3fd007691
+# Uname string: Linux version 5.4.83-v7+ (dom@buildbot) (gcc version 8.4.0 (Ubuntu/Linaro 8.4.0-3ubuntu1)) #1379 SMP Mon Dec 14 13:08:57 GMT 2020
+# 
+imgfullname20210111=2021-01-11-raspios-buster-armhf-full.img
+imgfullurl20210111=http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2021-01-12/2021-01-11-raspios-buster-armhf-full.zip
+imgname20210111=2021-01-11-raspios-buster-armhf.img
+imgurl20210111=http://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2021-01-12/2021-01-11-raspios-buster-armhf.zip
+imglitename20210111=2021-01-11-raspios-buster-armhf-lite.img
+imgliteurl20210111=http://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-01-12/2021-01-11-raspios-buster-armhf-lite.zip
+kernelversion20210111=5.4.83-v7l+
+kernelbranch20210111=raspberrypi-kernel_1.20210104-1
+kernel5.4.83-v7l+branch=raspberrypi-kernel_1.20210104-1
+kerneldefconfig20210111=bcm2711_defconfig
+kernelconfig20210111=$(configsdir)/kernel_config.20210111
+rootclone20210111=$(currdir)/srcs/root/root20190926
+
+# Desktop Full Info
 # Raspberry Pi reference 2020-12-02
 # Generated using pi-gen, https://github.com/RPi-Distro/pi-gen, cce27bd6f44a3b2e83855645986b3e21f771e852, stage5
 # 
@@ -9,8 +30,8 @@
 # 
 imgfullname20201202=2020-12-02-raspios-buster-armhf-full.img
 imgfullurl20201202=http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2020-12-04/2020-12-02-raspios-buster-armhf-full.zip
-imgnormalname20201202=2020-12-02-raspios-buster-armhf.img
-imgnormalurl20201202=http://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2020-12-04/2020-12-02-raspios-buster-armhf.zip
+imgname20201202=2020-12-02-raspios-buster-armhf.img
+imgurl20201202=http://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2020-12-04/2020-12-02-raspios-buster-armhf.zip
 imglitename20201202=2020-12-02-raspios-buster-armhf-lite.img
 imgliteurl20201202=http://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2020-12-04/2020-12-02-raspios-buster-armhf-lite.zip
 kernelversion20201202=5.4.79-v7l+
@@ -30,8 +51,8 @@ rootclone20201202=$(currdir)/srcs/root/root20190926
 # 
 imgfullname20200820=2020-08-20-raspios-buster-armhf-full.img
 imgfullurl20200820=http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2020-08-24/2020-08-20-raspios-buster-armhf-full.zip
-imgnormalname20200820=2020-08-20-raspios-buster-armhf.img
-imgnormalurl20200820=http://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2020-08-24/2020-08-20-raspios-buster-armhf.zip
+imgname20200820=2020-08-20-raspios-buster-armhf.img
+imgurl20200820=http://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2020-08-24/2020-08-20-raspios-buster-armhf.zip
 imglitename20200820=2020-08-20-raspios-buster-armhf-lite.img
 imgliteurl20200820=http://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2020-08-24/2020-08-20-raspios-buster-armhf-lite.zip
 kernelversion20200820=5.4.51-v7l+
@@ -51,8 +72,8 @@ rootclone20200820=$(currdir)/srcs/root/root20190926
 # 
 imgfullname20200527=2020-05-27-raspios-buster-full-armhf.img
 imgfullurl20200527=http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2020-05-28/2020-05-27-raspios-buster-full-armhf.zip
-imgnormalname20200527=2020-05-27-raspios-buster-armhf.img
-imgnormalurl20200527=http://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2020-05-28/2020-05-27-raspios-buster-armhf.zip
+imgname20200527=2020-05-27-raspios-buster-armhf.img
+imgurl20200527=http://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2020-05-28/2020-05-27-raspios-buster-armhf.zip
 imglitename20200527=2020-05-27-raspios-buster-lite-armhf.img
 imgliteurl20200527=http://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2020-05-28/2020-05-27-raspios-buster-lite-armhf.zip
 kernelversion20200527=4.19.118-v7l+
@@ -72,8 +93,8 @@ rootclone20200527=$(currdir)/srcs/root/root20190926
 # 
 imgfullname20200213=2020-02-13-raspbian-buster-full.img
 imgfullurl20200213=http://downloads.raspberrypi.org/raspbian_full/images/raspbian_full-2020-02-14/2020-02-13-raspbian-buster-full.zip
-imgnormalname20200213=2020-02-13-raspbian-buster.img
-imgnormalurl20200213=http://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-14/2020-02-13-raspbian-buster.zip
+imgname20200213=2020-02-13-raspbian-buster.img
+imgurl20200213=http://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-14/2020-02-13-raspbian-buster.zip
 imglitename20200213=2020-02-13-raspbian-buster-lite.img
 imgliteurl20200213=http://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2020-02-14/2020-02-13-raspbian-buster-lite.zip
 kernelversion20200213=4.19.97-v7l+
@@ -93,8 +114,8 @@ rootclone20200213=$(currdir)/srcs/root/root20190926
 # 
 imgfullname20200205=2020-02-05-raspbian-buster-full.img
 imgfullurl20200205=http://downloads.raspberrypi.org/raspbian_full/images/raspbian_full-2020-02-07/2020-02-05-raspbian-buster-full.zip
-imgnormalname20200205=2020-02-05-raspbian-buster.img
-imgnormalurl20200205=http://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-07/2020-02-05-raspbian-buster.zip
+imgname20200205=2020-02-05-raspbian-buster.img
+imgurl20200205=http://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-07/2020-02-05-raspbian-buster.zip
 imglitename20200205=2020-02-05-raspbian-buster-lite.img
 imgliteurl20200205=http://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2020-02-07/2020-02-05-raspbian-buster-lite.zip
 kernelversion20200205=4.19.97-v7l+
@@ -114,8 +135,8 @@ rootclone20200205=$(currdir)/srcs/root/root20190926
 # 
 imgfullname20190926=2019-09-26-raspbian-buster-full.img
 imgfullurl20190926=http://downloads.raspberrypi.org/raspbian_full/images/raspbian_full-2019-09-30/2019-09-26-raspbian-buster-full.zip
-imgnormalname20190926=2019-09-26-raspbian-buster.img
-imgnormalurl20190926=http://downloads.raspberrypi.org/raspbian/images/raspbian-2019-09-30/2019-09-26-raspbian-buster.zip
+imgname20190926=2019-09-26-raspbian-buster.img
+imgurl20190926=http://downloads.raspberrypi.org/raspbian/images/raspbian-2019-09-30/2019-09-26-raspbian-buster.zip
 imglitename20190926=2019-09-26-raspbian-buster-lite.img
 imgliteurl20190926=http://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2019-09-30/2019-09-26-raspbian-buster-lite.zip
 kernelversion20190926=4.19.75-v7l+
