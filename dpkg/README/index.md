@@ -2,8 +2,14 @@
 # UNO-220 Debian Packages for Serial, GPIO and RTC. 
 
 ## Introduction
-
-- Current version: 0.1-2
+- Current version: 
+    - uno220config: 0.1-2
+    - uno220cputempmon: 0.1-1
+    - uno220gpio: 0.1-3
+    - uno220gpiopins: 0.1-1
+    - uno220rtc: 0.1-4
+    - uno220tpm: 0.1-1
+    - uno220uart: 0.1-3
 - Supported image: 
   - [raspbian_full-2019-09-30](http://downloads.raspberrypi.org/raspbian_full/images/raspbian_full-2019-09-30/)
   - [raspbian_full-2020-02-07](http://downloads.raspberrypi.org/raspbian_full/images/raspbian_full-2020-02-07/)
@@ -11,6 +17,7 @@
   - [raspios_full_armhf-2020-05-28](http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2020-05-28/)
   - [raspios_full_armhf-2020-08-24](http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2020-08-24/)
   - [raspios_full_armhf-2020-12-04](http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2020-12-04/)
+  - [raspios_full_armhf-2021-01-12](http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2021-01-12/)
 
 
 ## Chagelog
