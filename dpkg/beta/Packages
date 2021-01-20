@@ -47,16 +47,16 @@ SHA256: 181cf6b61e26b96ecc719d595afe0983de36021fca9ec71460cba18b2039d882
 Description: Advantech UNO-220 (Raspberry Pi 4) IO Card GPIO Pins Package
 
 Package: uno220rtc
-Version: 0.1-3
+Version: 0.1-4
 Architecture: armhf
 Maintainer: Ralph Wang <ralph.wang@advantech.com.tw>
-Pre-Depends: raspberrypi-kernel (<=1.20201126-1)
+Pre-Depends: raspberrypi-kernel (<=1.20210108-1)
 Depends: sed (>=4.7-1)
-Filename: ./uno220rtc_0.1-3_armhf.deb
-Size: 12896
-MD5sum: 5a178755f439c0d7137a2a42b3654af1
-SHA1: f5cf3948c071cfe31cd24623e869075fbdb36c8d
-SHA256: 68ad02f824977018f1ed04446290c61fcb1ce34ded7a931a1eb551de9b9f7f16
+Filename: ./uno220rtc_0.1-4_armhf.deb
+Size: 12976
+MD5sum: eed5dc2aca08ca829feb996311193df7
+SHA1: 2b7c8c42db45db44d83217fcd855b378c4a1d275
+SHA256: 77fb09178d45c363b13575058a21077291d91f3b8c4d4c92167ef733243b16bf
 Description: Advantech UNO-220 (Raspberry Pi 4) IO Card RTC Package for EPSON RTC RX8010
 
 Package: uno220tpm
