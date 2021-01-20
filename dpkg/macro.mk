@@ -16,12 +16,12 @@ dpkgconfigeditor=Ralph Wang <ralph.wang@advantech.com.tw>
 dpkgconfigdepends=sed (>=4.7-1)
 dpkgrtcname=uno220rtc
 dpkgrtcversion=0.1
-dpkgrtcrevision=3
+dpkgrtcrevision=4
 dpkgrtcarch=armhf
 dpkgrtcdesc=Advantech UNO-220 (Raspberry Pi 4) IO Card RTC Package for EPSON RTC RX8010
 dpkgrtceditor=Ralph Wang <ralph.wang@advantech.com.tw>
 dpkgrtcdepends=sed (>=4.7-1)
-dpkgrtcpredepends=raspberrypi-kernel (<=1.20201126-1)
+dpkgrtcpredepends=raspberrypi-kernel (<=1.20210108-1)
 dpkggpioname=uno220gpio
 dpkggpioversion=0.1
 dpkggpiorevision=2
