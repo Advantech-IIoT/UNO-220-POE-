@@ -1,2 +1,2 @@
 
-https://github.com/Advantech-IIoT/UNO-220-POE-/wiki
+https://advantech-iiot.github.io/UNO-220-POE-/
