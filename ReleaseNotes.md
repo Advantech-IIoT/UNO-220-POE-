@@ -1,11 +1,10 @@
 # UNO-220 Raspberry Pi 4 Image Builder Release Notes
 
-- Version: 0.0.3
-- Date: 2021/01/16
-- Editor: Ralph Wang
+- Version: 1.0.3
+- Date: 2021/07/06
+- Editor: Yuchun Chen
 - Emails: 
-  - Ralph.Wang@advantech.com
-  - advantechralph@gmail.com
+  - yuchun.chen@advantech.com.tw
 
 ---
 
@@ -16,11 +15,13 @@
  - Serial to RS-232/485
  - Infineon TPM SLx9670. 
  - CPU temperature monitor sample code (C & Python) and C binary testing tool. 
- - Based on 2021-01-11-raspios-buster-armhf-full.img
+ - Based on 2021-05-07-raspios-buster-armhf-full.img
 
 ---
 
 ## Change List
+ - Version 1.0.3 (2021/07/06): 
+   - Update raspios image to 2021-05-07-raspios-buster-armhf-full.img. 
  - Version 0.0.3 (2021/01/16): 
    - Update raspios image to 2021-01-11-raspios-buster-armhf-full.img. 
  - Version 0.0.3 (2021/01/15): 
@@ -147,7 +148,7 @@
    
         Then, Pi will show received data prompt. 
 
-    - PC send data to Pi 
+    - Pi send data to PC 
 
       - PC side command:
         ```
@@ -158,7 +159,7 @@
         ```
         pi@raspberrypi:~ $ sudo uno220uartsend /dev/ttyS0 $(echo -ne "\x01\x02\x03")
         ```
-        Then, Pi will show received data prompt. 
+        Then, PC will show received data prompt. 
 
 ---
 

@@ -1,5 +1,26 @@
 
 # Desktop Full Info
+# Raspberry Pi reference 2021-05-07
+# Generated using pi-gen, https://github.com/RPi-Distro/pi-gen, dcfd74d7d1fa293065ac6d565711e9ff891fe2b8, stage5
+# 
+# Firmware: https://github.com/raspberrypi/firmware/tree/518ee7c871aaa9aaa88116953d57e73787ee6e43
+# Kernel: https://github.com/raspberrypi/linux/tree/3a33f11c48572b9dd0fecac164b3990fc9234da8
+# Uname string: Linux version 5.10.17-v7+ (dom@buildbot) (arm-linux-gnueabihf-gcc-8 (Ubuntu/Linaro 8.4.0-3ubuntu1) 8.4.0, GNU ld (GNU Binutils for Ubuntu) 2.34) #1414 SMP Fri Apr 30 13:18:35 BST 2021
+# 
+imgfullname20210507=2021-05-07-raspios-buster-armhf-full.img
+imgfullurl20210507=http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2021-05-28/2021-05-07-raspios-buster-armhf-full.zip
+imgname20210507=2021-05-07-raspios-buster-armhf.img
+imgurl20210507=http://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2021-05-28/2021-05-07-raspios-buster-armhf.zip
+imglitename20210507=2021-05-07-raspios-buster-armhf-lite.img
+imgliteurl20210507=http://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2021-05-28/2021-05-07-raspios-buster-armhf-lite.zip
+kernelversion20210507=5.10.17-v7l+
+kernelbranch20210507=raspberrypi-kernel_1.20210430-1 
+kernel5.10.17-v7l+branch=raspberrypi-kernel_1.20210430-1
+kerneldefconfig20210507=bcm2711_defconfig
+kernelconfig20210507=$(configsdir)/kernel_config.20210507
+rootclone20210507=$(currdir)/srcs/root/root20190926
+
+# Desktop Full Info
 # Raspberry Pi reference 2021-01-11
 # Generated using pi-gen, https://github.com/RPi-Distro/pi-gen, 21090519d85bdaa1615d5d5057d37b09368ea5d2, stage5
 # 
