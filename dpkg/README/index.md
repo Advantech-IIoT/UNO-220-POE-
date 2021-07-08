@@ -7,7 +7,7 @@
     - uno220cputempmon: 0.1-1
     - uno220gpio: 0.1-3
     - uno220gpiopins: 0.1-1
-    - uno220rtc: 0.1-4
+    - uno220rtc: 0.1-5
     - uno220tpm: 0.1-1
     - uno220uart: 0.1-3
 - Supported image: 
@@ -18,9 +18,14 @@
   - [raspios_full_armhf-2020-08-24](http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2020-08-24/)
   - [raspios_full_armhf-2020-12-04](http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2020-12-04/)
   - [raspios_full_armhf-2021-01-12](http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2021-01-12/)
+  - [raspios_full_armhf-2021-05-28](http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2021-05-28/)
 
 
 ## Chagelog
+
+- 2021-07-06
+    - normal version (synchronized): 
+        - Update supported image to 2021-05-28. 
 
 - 2021-01-13
     - beta version and normal version (synchronized): 
