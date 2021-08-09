@@ -48,6 +48,10 @@ endef
 define rpienabletpmconfig
   ( sed -i -e '/dtoverlay=tpm-slb9670/d' -e '/\[all\]/adtoverlay=tpm-slb9670' $(1) )
 endef
+# rc.local: tpm-slb9670
+define enableTPMsetting
+  ( sed -i -e '/exit\ 0/i\/usr\/Advantech\/TPM\/SetTPM\.sh' $(1) )
+endef
 # config.txt: uno220-gpio
 define rpidisableuno220gpioconfig
   ( sed -i -e '/dtoverlay=uno220-gpio/d' $(1) )

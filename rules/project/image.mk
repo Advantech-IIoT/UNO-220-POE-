@@ -71,6 +71,10 @@ enable_uno220gpio_config:
 disable_uno220gpio_config:
 	@$(call rpidisableuno220gpioconfig,$(mountdir)/boot/config.txt)
 
+.PHONY: enable_TPM_setting
+enable_TPM_setting:
+	@$(call enableTPMsetting,$(mountdir)/root/etc/rc.local)
+
 .PHONY: enable_console_cmdline
 enable_console_cmdline:
 	@$(call rpienableconsolecmdline,$(mountdir)/boot/cmdline.txt)
@@ -146,6 +150,7 @@ build_img: \
 	enable_spi_config \
 	enable_tpm_config \
 	enable_uno220gpio_config \
+        enable_TPM_setting \
 	modules \
 	bootclone \
 	rootclone \

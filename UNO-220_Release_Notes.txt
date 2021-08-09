@@ -1,7 +1,7 @@
 ##################################################################
 #             UNO-220 Raspberry Pi 4 Image Builder               #
 #                        Release Notes                           #
-#                Version: 1.0.3 Date: 2021/07/06                 #
+#                Version: 1.0.4 Date: 2021/08/09                 #
 ##################################################################
 ------------------------------------------------------------------
  Feature List 
@@ -14,6 +14,8 @@
  - Based on 2021-05-07-raspios-buster-armhf-full.img
 ------------------------------------------------------------------
  Change List
+ - Version 1.0.4 (2021/08/09): 
+   - Add workaround solution to solve kernel panic message when start "reboot" or "power off" action. 
  - Version 1.0.3 (2021/07/06): 
    - Update raspios image to 2021-05-07-raspios-buster-armhf-full.img. 
  - Version 0.0.3 (2021/01/16): 
