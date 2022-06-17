@@ -23,11 +23,11 @@ for UNO-220 IO on Raspberry Pi 4.
 
 - ssh
   ```
-  $ git clone git@github.com:advantechralph/uno-220.git
+  $ git clone git@github.com:Advantech-IIoT/UNO-220-POE-.git
   ```
 - https
   ```
-  $ git clone https://github.com/advantechralph/uno-220.git
+  $ git clone https://github.com/Advantech-IIoT/UNO-220-POE-.git
   ```
 
 ## Build Commands
