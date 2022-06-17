@@ -38,38 +38,27 @@
 
 ## How to Install UNO-220 Packages
 
-Append the following in `/etc/apt/sources.list` on your Pi 4. 
+Download driver package which is deb format to your Pi 4. 
+
+Install driver package to your Pi 4. 
 
 ```
-deb [trusted=yes] https://advantechralph.github.io/uno-220/dpkg/ /
-```
-
-For beta testing packages
-```
-deb [trusted=yes] https://advantechralph.github.io/uno-220/dpkg/beta/ /
-```
-
-Run `apt-get update`
-
-```
-$ sudo apt-get update
-```
-
-Install packages. 
-
-```
-$ sudo apt-get install uno220config uno220rtc uno220gpio uno220uart
+$ sudo dpkg -i uno220config_0.1-2_armhf.deb
+$ sudo dpkg -i uno220gpio_0.1-3_armhf.deb
+$ sudo dpkg -i uno220rtc_0.1-5_armhf.deb
+$ sudo dpkg -i uno220uart_0.1-3_armhf.deb
 ```
 
 GPIO Pin Definition Packages
 
 ```
-$ sudo apt-get install uno220gpiopins
+$ sudo dpkg -i uno220gpiopins_0.1-1_armhf.deb
 ```
 
 Optional packages
 ```
-$ sudo apt-get install uno220tpm uno220cputempmon
+$ sudo dpkg -i uno220cputempmon_0.1-1_armhf.deb
+$ sudo dpkg -i uno220tpm_0.1-1_armhf.deb
 ```
 
 Reboot your Pi 4 and test IO. 
