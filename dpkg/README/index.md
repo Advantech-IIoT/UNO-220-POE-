@@ -7,7 +7,7 @@
     - uno220cputempmon: 0.1-1
     - uno220gpio: 0.1-3
     - uno220gpiopins: 0.1-1
-    - uno220rtc: 0.1-5
+    - uno220rtc: 0.1-6
     - uno220tpm: 0.1-1
     - uno220uart: 0.1-3
 - Supported image: 
@@ -19,9 +19,14 @@
   - [raspios_full_armhf-2020-12-04](http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2020-12-04/)
   - [raspios_full_armhf-2021-01-12](http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2021-01-12/)
   - [raspios_full_armhf-2021-05-28](http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2021-05-28/)
+  - [raspios_full_armhf-2022-04-07](http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2022-04-07/)
 
 
 ## Chagelog
+
+- 2022-07-01
+    - normal version (synchronized): 
+        - Update supported image to 2022-04-07. 
 
 - 2021-07-06
     - normal version (synchronized): 
@@ -45,7 +50,7 @@ Install driver package to your Pi 4.
 ```
 $ sudo dpkg -i uno220config_0.1-2_armhf.deb
 $ sudo dpkg -i uno220gpio_0.1-3_armhf.deb
-$ sudo dpkg -i uno220rtc_0.1-5_armhf.deb
+$ sudo dpkg -i uno220rtc_0.1-6_armhf.deb
 $ sudo dpkg -i uno220uart_0.1-3_armhf.deb
 ```
 
