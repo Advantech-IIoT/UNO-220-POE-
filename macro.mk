@@ -7,14 +7,18 @@ builddir=$(shell realpath -m $(currdir)/build)
 # image                          #
 ##################################
 include images.info
-# imgver: 20190926, 20200205, 20200213, 20200527, 20200820, 20201202, 20210111, 20210507
-imgver=20210507
+# imgver: 20190926, 20200205, 20200213, 20200527, 20200820, 20201202, 20210111, 20210507, 20220404
+imgver=20220404
 # imgtype=full     # Full Desktop image
 # imgtype=         # Normal Desktop image
 # imgtype=lite     # Lite image
 imgtype=full
-zipimg=$(builddir)/download/raspbian$(imgtype)$(imgver).img.zip
+
 imgname=$(img$(imgtype)name$(imgver))
+zipimg=$(builddir)/download/$(imgname).zip
+ifeq ($(imgver),20220404)
+	zipimg=$(builddir)/download/$(imgname).xz
+endif
 imgurl=$(img$(imgtype)url$(imgver))
 releasedir=$(builddir)/release
 mountdir=$(builddir)/mount
@@ -24,6 +28,10 @@ img=$(releasedir)/$(imgname)
 sector=512
 rootclone=root20190926 rootAdvantech
 bootclone=tpm
+AdvVersion=V1.0.5_$(imgtype)
+ifeq ($(imgtype), )
+	AdvVersion=V1.0.5
+endif
 ##################################
 # kernel                         #
 ##################################
@@ -45,7 +53,7 @@ compilerbranch=master
 ##################################
 # env                            #
 ##################################
-export PATH:=$(compilerdir)/arm-bcm2708/arm-linux-gnueabihf/bin:$(PATH) 
+#export PATH:=$(compilerdir)/arm-bcm2708/arm-linux-gnueabihf/bin:$(PATH) 
 export CROSS_COMPILE=arm-linux-gnueabihf-
 export HOSTCC=gcc
 export CC=$(CROSS_COMPILE)gcc
@@ -65,12 +73,12 @@ dpkgconfigdepends=sed (>=4.7-1)
 #uno220rtc
 dpkgrtcname=uno220rtc
 dpkgrtcversion=0.1
-dpkgrtcrevision=5
+dpkgrtcrevision=6
 dpkgrtcarch=armhf
 dpkgrtcdesc=Advantech UNO-220 (Raspberry Pi 4) IO Card RTC Package for EPSON RTC RX8010
 dpkgrtceditor=Ralph Wang <ralph.wang@advantech.com.tw>
 dpkgrtcdepends=sed (>=4.7-1)
-dpkgrtcpredepends=raspberrypi-kernel (<=1.20210430-1)
+dpkgrtcpredepends=raspberrypi-kernel (<=1:1.20220331-1)
 #dpkgrtcpredepends=raspberrypi-kernel (<=1.20201022-1)
 #uno220gpio
 dpkggpioname=uno220gpio

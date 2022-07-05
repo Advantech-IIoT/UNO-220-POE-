@@ -1,7 +1,7 @@
 # UNO-220 Raspberry Pi 4 Image Builder Release Notes
 
-- Version: 1.0.4
-- Date: 2021/08/09
+- Version: 1.0.5
+- Date: 2022/07/05
 - Editor: Yuchun Chen
 - Emails: 
   - yuchun.chen@advantech.com.tw
@@ -15,11 +15,13 @@
  - Serial to RS-232/485
  - Infineon TPM SLx9670. 
  - CPU temperature monitor sample code (C & Python) and C binary testing tool. 
- - Based on 2021-05-07-raspios-buster-armhf-full.img
+ - Based on 2022-04-04-raspios-bullseye-armhf-full.img
 
 ---
 
 ## Change List
+ - Version 1.0.5 (2022/07/05): 
+   - Update raspios image to 2022-04-04-raspios-bullseye-armhf-full.img.
  - Version 1.0.4 (2021/08/09): 
    - Add workaround solution to solve kernel panic message when start "reboot" or "power off" action. 
  - Version 1.0.3 (2021/07/06): 

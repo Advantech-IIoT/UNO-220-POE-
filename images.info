@@ -1,5 +1,26 @@
 
 # Desktop Full Info
+# Raspberry Pi reference 2022-04-04
+# Generated using pi-gen, https://github.com/RPi-Distro/pi-gen, 226b479f8d32919c9fe36dd5b4c20c02682f8180, stage4
+# 
+# Firmware: https://github.com/raspberrypi/firmware/tree/61966732d03de9b71baf561f920e018b54c241ac
+# Kernel: https://github.com/raspberrypi/linux/tree/6f921e98008589258f97243fb6658d09750f0a2f
+# Uname string: Linux version 5.15.32-v7+ (dom@buildbot) (arm-linux-gnueabihf-gcc-8 (Ubuntu/Linaro 8.4.0-3ubuntu1) 8.4.0, GNU ld (GNU Binutils for Ubuntu) 2.34) #1538 SMP Thu Mar 31 19:38:48 BST 2022
+# 
+imgfullname20220404=2022-04-04-raspios-bullseye-armhf-full.img
+imgfullurl20220404=http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2022-04-07/2022-04-04-raspios-bullseye-armhf-full.img.xz
+imgname20220404=2022-04-04-raspios-bullseye-armhf.img
+imgurl20220404=http://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2022-04-07/2022-04-04-raspios-bullseye-armhf.img.xz
+imglitename20220404=2022-04-04-raspios-bullseye-armhf-lite.img
+imgliteurl20220404=http://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2022-04-07/2022-04-04-raspios-bullseye-armhf-lite.img.xz
+kernelversion20220404=5.15.32-v7l+
+kernelbranch20220404=raspberrypi-kernel_1.20220331 
+kernel5.15.32-v7l+branch=1.20220331
+kerneldefconfig20220404=bcm2711_defconfig
+kernelconfig20220404=$(configsdir)/kernel_config.20220404
+rootclone20220404=$(currdir)/srcs/root/root20190926
+
+# Desktop Full Info
 # Raspberry Pi reference 2021-05-07
 # Generated using pi-gen, https://github.com/RPi-Distro/pi-gen, dcfd74d7d1fa293065ac6d565711e9ff891fe2b8, stage5
 # 

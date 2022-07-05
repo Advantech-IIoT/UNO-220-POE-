@@ -13,7 +13,11 @@ $(zipimg):
 $(releasedir)/.unpack_img: $(img)
 
 $(img): 
+ifeq ($(imgver),20220404)
+	@cd $(releasedir) && xz -dkf $(zipimg) && mv $(builddir)/download/$(imgname) $(releasedir)
+else
 	@cd $(releasedir) && unzip $(zipimg)
+endif
 
 .PHONY: clean_img
 clean_img: 
@@ -105,9 +109,10 @@ enable_ssh_config:
 
 .PHONY: checksum_img
 checksum_img:
-	@cd $(releasedir) && md5sum $(imgname) > $(imgname).md5
-	@cd $(releasedir) && sha256sum $(imgname) > $(imgname).sha256
-	@cd $(releasedir) && sha1sum $(imgname) > $(imgname).sha1
+	@cd $(releasedir) && mv $(imgname) AdvRaspbian_$(AdvVersion).img
+	@cd $(releasedir) && md5sum AdvRaspbian_$(AdvVersion).img > AdvRaspbian_$(AdvVersion).img.md5
+	@cd $(releasedir) && sha256sum AdvRaspbian_$(AdvVersion).img > AdvRaspbian_$(AdvVersion).img.sha256
+	@cd $(releasedir) && sha1sum AdvRaspbian_$(AdvVersion).img > AdvRaspbian_$(AdvVersion).img.sha1
 
 .PHONY: build_basic_img
 build_basic_img: \
