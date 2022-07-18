@@ -7,12 +7,12 @@ builddir=$(shell realpath -m $(currdir)/build)
 # image                          #
 ##################################
 include images.info
-# imgver: 20190926, 20200205, 20200213, 20200527, 20200820, 20201202, 20210111, 20210507, 20220404
+# imgver: 20220404
 imgver=20220404
 # imgtype=full     # Full Desktop image
 # imgtype=         # Normal Desktop image
 # imgtype=lite     # Lite image
-imgtype=full
+imgtype=
 
 imgname=$(img$(imgtype)name$(imgver))
 zipimg=$(builddir)/download/$(imgname).zip
@@ -28,9 +28,9 @@ img=$(releasedir)/$(imgname)
 sector=512
 rootclone=root20190926 rootAdvantech
 bootclone=tpm
-AdvVersion=V1.0.5_$(imgtype)
+AdvVersion=V1.0.1_$(imgtype)_arm64
 ifeq ($(imgtype), )
-	AdvVersion=V1.0.5
+	AdvVersion=V1.0.1_arm64
 endif
 ##################################
 # kernel                         #
@@ -54,10 +54,10 @@ compilerbranch=master
 # env                            #
 ##################################
 #export PATH:=$(compilerdir)/arm-bcm2708/arm-linux-gnueabihf/bin:$(PATH) 
-export CROSS_COMPILE=arm-linux-gnueabihf-
+export CROSS_COMPILE=aarch64-linux-gnu-
 export HOSTCC=gcc
 export CC=$(CROSS_COMPILE)gcc
-export ARCH=arm
+export ARCH=arm64
 export SHELL=/bin/bash
 ##################################
 # dpkg                           #
@@ -66,33 +66,32 @@ export SHELL=/bin/bash
 dpkgconfigname=uno220config
 dpkgconfigversion=0.1
 dpkgconfigrevision=2
-dpkgconfigarch=armhf
+dpkgconfigarch=arm64
 dpkgconfigdesc=Advantech UNO-220 (Raspberry Pi 4) IO Card RTC Package for config.txt and cmdline.txt
-dpkgconfigeditor=Ralph Wang <ralph.wang@advantech.com.tw>
+dpkgconfigeditor=Yuchun Chen <yuchun.chen@advantech.com.tw>
 dpkgconfigdepends=sed (>=4.7-1)
 #uno220rtc
 dpkgrtcname=uno220rtc
 dpkgrtcversion=0.1
-dpkgrtcrevision=6
-dpkgrtcarch=armhf
+dpkgrtcrevision=3
+dpkgrtcarch=arm64
 dpkgrtcdesc=Advantech UNO-220 (Raspberry Pi 4) IO Card RTC Package for EPSON RTC RX8010
-dpkgrtceditor=Ralph Wang <ralph.wang@advantech.com.tw>
+dpkgrtceditor=Yuchun Chen <yuchun.chen@advantech.com.tw>
 dpkgrtcdepends=sed (>=4.7-1)
-dpkgrtcpredepends=raspberrypi-kernel (<=1:1.20220331-1)
-#dpkgrtcpredepends=raspberrypi-kernel (<=1.20201022-1)
+dpkgrtcpredepends=raspberrypi-kernel (<=1:1.20220120-1)
 #uno220gpio
 dpkggpioname=uno220gpio
 dpkggpioversion=0.1
 dpkggpiorevision=2
-dpkggpioarch=armhf
-dpkggpiodesc=Advantech UNO-220 (Raspberry PI 4) IO Card GPIO EXPANDER for TI TCA9554 
-dpkggpioeditor=Ralph Wang <ralph.wang@advantech.com.tw>
+dpkggpioarch=arm64
+dpkggpiodesc=Advantech UNO-220 (Raspberry PI 4) IO Card GPIO EXPANDER for TI TCA9554
+dpkggpioeditor=Yuchun Chen <yuchun.chen@advantech.com.tw>
 dpkggpiodepends=sed (>=4.7-1)
 #uno220uart
 dpkguartname=uno220uart
 dpkguartversion=0.1
 dpkguartrevision=2
-dpkguartarch=armhf
+dpkguartarch=arm64
 dpkguartdesc=Advantech UNO-220 (Raspberry PI 4) UART Tools
-dpkguarteditor=Ralph Wang <ralph.wang@advantech.com.tw>
+dpkguarteditor=Yuchun Chen <yuchun.chen@advantech.com.tw>
 dpkguartdepends=sed (>=4.7-1)

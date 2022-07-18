@@ -50,7 +50,11 @@ define rpienabletpmconfig
 endef
 # rc.local: tpm-slb9670
 define enableTPMsetting
-  ( sed -i -e '/exit\ 0/i\/usr\/Advantech\/TPM\/SetTPM\.sh' $(1) )
+  ( sed -i -e '/By default this script does nothing./a\/usr\/Advantech\/TPM\/SetTPM\.sh' $(1)  )
+endef
+# rc.local: rtc
+define InstallRTCpackage
+  ( sed -i -e '/By default this script does nothing./a\/usr\/Advantech\/RTC\/SetRTC\.sh' $(1) )
 endef
 # config.txt: uno220-gpio
 define rpidisableuno220gpioconfig

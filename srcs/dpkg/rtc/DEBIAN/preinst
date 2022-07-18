@@ -1,3 +1,20 @@
 #!/bin/bash
 echo "__name__: ${BASH_SOURCE[0]}"
-# sed -i -e '/dtparam=i2c_arm=on/s/^[\t #]*//' /boot/config.txt
+
+kernel_versions="5.4.0-1015-raspi 5.4.0-1022-raspi 5.15.32-v8+"
+curr_kernel_version=$(uname -r)
+
+eval "set -- ${kernel_versions}"
+
+hunt=0
+for v in ${kernel_versions}; do
+  if [ "${curr_kernel_version}" == "$v" ] ; then
+    hunt=1
+  fi
+done
+
+if [ $hunt -ne 1 ] ; then
+  echo "ERROR: Current system kernel version is not supported!!!!"
+  exit 1; 
+fi
+

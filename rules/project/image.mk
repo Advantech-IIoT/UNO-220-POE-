@@ -79,6 +79,10 @@ disable_uno220gpio_config:
 enable_TPM_setting:
 	@$(call enableTPMsetting,$(mountdir)/root/etc/rc.local)
 
+.PHONY: Install_RTC_package
+Install_RTC_package:
+	@$(call InstallRTCpackage,$(mountdir)/root/etc/rc.local)
+
 .PHONY: enable_console_cmdline
 enable_console_cmdline:
 	@$(call rpienableconsolecmdline,$(mountdir)/boot/cmdline.txt)
@@ -156,6 +160,7 @@ build_img: \
 	enable_tpm_config \
 	enable_uno220gpio_config \
         enable_TPM_setting \
+	Install_RTC_package \
 	modules \
 	bootclone \
 	rootclone \
@@ -166,7 +171,7 @@ build_img: \
 install_dpkg_img: 
 	@cp -a $(currdir)/tools/qemu-arm-static $(mountdir)/root/usr/bin
 	@sed -i -e "s/\$${PLATFORM}/v7l/" $(mountdir)/root/etc/ld.so.preload 
-	@sed -i -e "/uno-220/d" -e '$$adeb [trusted=yes] https://advantechralph.github.io/uno-220/dpkg/ /' $(mountdir)/root/etc/apt/sources.list
+	@sed -i -e "/uno-220/d" -e '$$adeb [trusted=yes] https://github.com/Advantech-IIoT/UNO-220-POE-.git/dpkg/ /' $(mountdir)/root/etc/apt/sources.list
 	@RUNLEVEL=1 chroot $(mountdir)/root apt-get update
 	@RUNLEVEL=1 chroot $(mountdir)/root apt-get install -y uno220config
 	@RUNLEVEL=1 chroot $(mountdir)/root apt-get install -y uno220rtc uno220gpio uno220uart

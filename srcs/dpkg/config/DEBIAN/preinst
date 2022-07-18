@@ -1,6 +1,13 @@
 #!/bin/bash
 echo "__name__: ${BASH_SOURCE[0]}"
-sed -i -e '/dtparam=i2c_arm=on/s/^[\t #]*//' /boot/config.txt
-sed -i -e '/enable_uart=1/d' -e '/\[all\]/aenable_uart=1' /boot/config.txt
-sed -i -e "s/console=[^ ]*//g" -e "s/^ *//" /boot/cmdline.txt
-touch /boot/ssh
+if [ -d "/boot/firmware" ] ;  then 
+  sed -i -e '/dtparam=i2c_arm=on/s/^[\t #]*//' /boot/firmware/config.txt
+  sed -i -e '/enable_uart=1/d' -e '/\[all\]/aenable_uart=1' /boot/firmware/config.txt
+  sed -i -e "s/console=[^ ]*//g" -e "s/^ *//" -e "s/  */ /g" /boot/firmware/cmdline.txt
+#  touch /boot/firmware/ssh
+else
+  sed -i -e '/dtparam=i2c_arm=on/s/^[\t #]*//' /boot/config.txt
+  sed -i -e '/enable_uart=1/d' -e '/\[all\]/aenable_uart=1' /boot/config.txt
+  sed -i -e "s/console=[^ ]*//g" -e "s/^ *//" /boot/cmdline.txt
+  touch /boot/ssh
+fi

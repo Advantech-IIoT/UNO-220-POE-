@@ -10,13 +10,13 @@ compilerbranch=master
 ##################################
 # env                            #
 ##################################
-export PATH:=$(compilerdir)/arm-bcm2708/arm-linux-gnueabihf/bin:$(PATH) 
-export CROSS_COMPILE=arm-linux-gnueabihf-
+#export PATH:=$(compilerdir)/arm-bcm2708/arm-linux-gnueabihf/bin:$(PATH) 
+export CROSS_COMPILE=aarch64-linux-gnu-
 export HOSTCC=gcc
 export HOSTLD=ld
 export CC=$(CROSS_COMPILE)gcc
 export LD=$(CROSS_COMPILE)ld
-export ARCH=arm
+export ARCH=arm64
 export SHELL=/bin/bash
 CFLAGS=-Wall -I$(incdir)
 LDFLAGS=

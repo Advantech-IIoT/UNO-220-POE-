@@ -1,7 +1,7 @@
-# UNO-220 Raspberry Pi 4 Image Builder Release Notes
+# UNO-220 Raspberry Pi 4 64-bit Image Builder Release Notes
 
-- Version: 1.0.5
-- Date: 2022/07/05
+- Version: 1.0.1
+- Date: 2022/07/18
 - Editor: Yuchun Chen
 - Emails: 
   - yuchun.chen@advantech.com.tw
@@ -15,40 +15,13 @@
  - Serial to RS-232/485
  - Infineon TPM SLx9670. 
  - CPU temperature monitor sample code (C & Python) and C binary testing tool. 
- - Based on 2022-04-04-raspios-bullseye-armhf-full.img
+ - Based on 2022-04-04-raspios-bullseye-arm64.img
 
 ---
 
 ## Change List
- - Version 1.0.5 (2022/07/05): 
-   - Update raspios image to 2022-04-04-raspios-bullseye-armhf-full.img.
- - Version 1.0.4 (2021/08/09): 
-   - Add workaround solution to solve kernel panic message when start "reboot" or "power off" action. 
- - Version 1.0.3 (2021/07/06): 
-   - Update raspios image to 2021-05-07-raspios-buster-armhf-full.img. 
- - Version 0.0.3 (2021/01/16): 
-   - Update raspios image to 2021-01-11-raspios-buster-armhf-full.img. 
- - Version 0.0.3 (2021/01/15): 
-   - Update raspios image to 2020-12-02-raspios-buster-armhf-full.img. 
-   - Pull high GPIO 12 to disable LED.
- - Version 0.0.3 (2021/01/05): 
-   - Enable Infineon TPM SLx9670. 
- - Version 0.0.3 (2020/12/23): 
-   - Update Infineon TPM SLx9670 device tree overlay. 
- - Version 0.0.3 (2020/12/04): 
-   - CPU temperature monitor sample code (C & Python) and C binary testing tool. 
- - Version 0.0.2 (2020/10/27): 
-   - RTC driver supports for multiple kernel versions and the latest version 1.20201022-1. 
-   - Add Debian packages for rtc, serial and gpio. 
- - Version 0.0.1 (2020/10/23): 
-   - Image base changed to 2020-08-20-raspios-buster-armhf-full.img. 
- - Version 0.0.1 (2020/04/30): 
-   - Enable hdmi_force_hotplug in configs.txt. 
- - Version 0.0.1 (2020/03/02): 
-   - Fix the system time not synchronized with realtime clock hardware when boot-up. 
- - Version 0.0.1 (2020/02/10): 
-   - Enable SSH server by default.  
-   - Create Raspbian full image for Advantech UNO-220 IO Board. 
+ - Version 1.0.1 (2022/07/18): 
+   - Create Raspberry Pi OS (64-bit) image for Advantech UNO-220 IO Board. 
 
 ---
 
