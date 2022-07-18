@@ -1,0 +1,62 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "brcm,bcm2711";
+    fragment@0 {
+        target-path = "/";
+        __overlay__ {
+
+            test: test_node {
+                string = "hello";
+                status = "disabled";
+                bytes = /bits/ 8 <0x67 0x89>;
+                u16s = /bits/ 16 <0xabcd 0xef01>;
+                u32s = /bits/ 32 <0xfedcba98 0x76543210>;
+                u64s = /bits/ 64 < 0xaaaaa5a55a5a5555 0x0000111122223333>;
+                bool1; // Defaults to true
+                       // bool2 defaults to false
+                mac = [01 23 45 67 89 ab];
+                spi = <&spi0>;
+            };
+        };
+    };
+
+    fragment@1 {
+        target-path = "/";
+        __overlay__ {
+            frag1;
+        };
+    };
+
+    fragment@2 {
+        target-path = "/";
+        __dormant__ {
+            frag2;
+        };
+    };
+
+    __overrides__ {
+        string =      <&test>,"string";
+        enable =      <&test>,"status";
+        byte_0 =      <&test>,"bytes.0";
+        byte_1 =      <&test>,"bytes.1";
+        u16_0 =       <&test>,"u16s;0";
+        u16_1 =       <&test>,"u16s;2";
+        u32_0 =       <&test>,"u32s:0";
+        u32_1 =       <&test>,"u32s:4";
+        u64_0 =       <&test>,"u64s#0";
+        u64_1 =       <&test>,"u64s#8";
+        bool1 =       <&test>,"bool1!";
+        bool2 =       <&test>,"bool2?";
+        entofr =      <&test>,"english",
+                      <&test>,"french{hello=bonjour,goodbye='au revoir',weekend}";
+        pi_mac =      <&test>,"mac[{1=b8273bfedcba,2=b8273b987654}";
+        spibus =      <&test>,"spi:0[0=",<&spi0>,"1=",<&spi1>,"2=",<&spi2>;
+
+        only1 =       <0>,"+1-2";
+        only2 =       <0>,"-1+2";
+        enable1 =     <0>,"=1";
+        disable2 =    <0>,"!2";
+    };
+};

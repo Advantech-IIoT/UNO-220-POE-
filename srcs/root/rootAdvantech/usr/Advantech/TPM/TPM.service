@@ -1,0 +1,10 @@
+[Unit]
+Description=This service calls RemoveTPM.sh upon shutdown or reboot
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStop=/usr/Advantech/TPM/RemoveTPM.sh
+
+[Install]
+WantedBy=multi-user.target
