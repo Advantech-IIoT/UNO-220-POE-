@@ -19,7 +19,8 @@
 - [UART Configuration](https://www.raspberrypi.org/documentation/configuration/uart.md)
 - Offical Images Download
   - [Raspbian Full](http://downloads.raspberrypi.org/raspbian_full/images/)
-  - [Raspios Full (After 2020/05)](http://downloads.raspberrypi.org/raspios_full_armhf/images/)
+  - [Raspios Full (After 2020/05)](https://downloads.raspberrypi.org/raspios_full_armhf/images/)
+  - [Raspios Full 64-bit)](https://downloads.raspberrypi.org/raspios_arm64/images/)
 
 ---
 
