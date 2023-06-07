@@ -7,8 +7,8 @@ builddir=$(shell realpath -m $(currdir)/build)
 # image                          #
 ##################################
 include images.info
-# imgver: 20190926, 20200205, 20200213, 20200527, 20200820, 20201202, 20210111, 20210507, 20220404
-imgver=20220404
+# imgver: 20190926, 20200205, 20200213, 20200527, 20200820, 20201202, 20210111, 20210507, 20220404, 20230221
+imgver=20230221
 # imgtype=full     # Full Desktop image
 # imgtype=         # Normal Desktop image
 # imgtype=lite     # Lite image
@@ -17,6 +17,8 @@ imgtype=full
 imgname=$(img$(imgtype)name$(imgver))
 zipimg=$(builddir)/download/$(imgname).zip
 ifeq ($(imgver),20220404)
+	zipimg=$(builddir)/download/$(imgname).xz
+else ifeq ($(imgver),20230221)
 	zipimg=$(builddir)/download/$(imgname).xz
 endif
 imgurl=$(img$(imgtype)url$(imgver))
@@ -28,9 +30,9 @@ img=$(releasedir)/$(imgname)
 sector=512
 rootclone=root20190926 rootAdvantech
 bootclone=tpm
-AdvVersion=V1.0.5_$(imgtype)
+AdvVersion=V1.0.6_$(imgtype)
 ifeq ($(imgtype), )
-	AdvVersion=V1.0.5
+	AdvVersion=V1.0.6
 endif
 ##################################
 # kernel                         #
@@ -73,12 +75,12 @@ dpkgconfigdepends=sed (>=4.7-1)
 #uno220rtc
 dpkgrtcname=uno220rtc
 dpkgrtcversion=0.1
-dpkgrtcrevision=6
+dpkgrtcrevision=7
 dpkgrtcarch=armhf
 dpkgrtcdesc=Advantech UNO-220 (Raspberry Pi 4) IO Card RTC Package for EPSON RTC RX8010
 dpkgrtceditor=Ralph Wang <ralph.wang@advantech.com.tw>
 dpkgrtcdepends=sed (>=4.7-1)
-dpkgrtcpredepends=raspberrypi-kernel (<=1:1.20220331-1)
+dpkgrtcpredepends=raspberrypi-kernel (<=1:1.20230106-1)
 #dpkgrtcpredepends=raspberrypi-kernel (<=1.20201022-1)
 #uno220gpio
 dpkggpioname=uno220gpio

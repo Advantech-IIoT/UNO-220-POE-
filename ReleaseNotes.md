@@ -1,7 +1,7 @@
 # UNO-220 Raspberry Pi 4 Image Builder Release Notes
 
-- Version: 1.0.5
-- Date: 2022/07/05
+- Version: 1.0.6
+- Date: 2023/06/07
 - Editor: Yuchun Chen
 - Emails: 
   - yuchun.chen@advantech.com.tw
@@ -15,11 +15,13 @@
  - Serial to RS-232/485
  - Infineon TPM SLx9670. 
  - CPU temperature monitor sample code (C & Python) and C binary testing tool. 
- - Based on 2022-04-04-raspios-bullseye-armhf-full.img
+ - Based on 2023-02-21-raspios-bullseye-armhf-full.img
 
 ---
 
 ## Change List
+ - Version 1.0.6 (2023/06/07): 
+   - Update raspios image to 2023-02-21-raspios-bullseye-armhf-full.img.
  - Version 1.0.5 (2022/07/05): 
    - Update raspios image to 2022-04-04-raspios-bullseye-armhf-full.img.
  - Version 1.0.4 (2021/08/09): 
