@@ -17,7 +17,7 @@ dpkgconfigdepends=sed (>=4.7-1)
 #uno220rtc
 dpkgrtcname=uno220rtc
 dpkgrtcversion=0.1
-dpkgrtcrevision=3
+dpkgrtcrevision=4
 dpkgrtcarch=arm64
 dpkgrtcdesc=Advantech UNO-220 (Raspberry Pi 4) IO Card RTC Package for EPSON RTC RX8010
 dpkgrtceditor=Ralph Wang <ralph.wang@advantech.com.tw>
