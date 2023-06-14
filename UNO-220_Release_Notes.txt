@@ -1,7 +1,7 @@
 ##################################################################
 #             UNO-220 Raspberry Pi 4 64-bit Image Builder        #
 #                        Release Notes                           #
-#                Version: 1.0.1 Date: 2022/07/18                 #
+#                Version: 1.0.2 Date: 2023/06/12                 #
 ##################################################################
 ------------------------------------------------------------------
  Feature List 
@@ -11,9 +11,11 @@
  - Serial to RS-232/485
  - Infineon TPM SLx9670
  - CPU temperature monitor sample code (C & Python) and C binary testing tool. 
- - Based on 2022-04-04-raspios-bullseye-arm64.img
+ - Based on 2023-02-21-raspios-bullseye-arm64.img.
 ------------------------------------------------------------------
  Change List
+ - Version 1.0.2 (2023/06/12): 
+   -  Update raspios image to 2023-02-21-raspios-bullseye-arm64.img. 
  - Version 1.0.1 (2022/07/18): 
    -  Create Raspberry Pi OS (64-bit) image for Advantech UNO-220 IO Board. 
 ------------------------------------------------------------------

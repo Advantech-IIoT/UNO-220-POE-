@@ -1,3 +1,23 @@
+# Desktop Full Info
+# Raspberry Pi reference 2023-02-21
+# Generated using pi-gen, https://github.com/RPi-Distro/pi-gen, 25e2319effa91eb95edd9d9209eb9f8a584d67be, stage5
+# 
+# Firmware:  https://github.com/raspberrypi/firmware/tree/78852e166b4cf3ebb31d051e996d54792f0994b0
+# Kernel: https://github.com/raspberrypi/linux/tree/355bbe0f8114dcedd8ef5d9989a5c0f07301db9e
+# Uname string: Linux version 5.15.84-v7+ (dom@buildbot) (arm-linux-gnueabihf-gcc-8 (Ubuntu/Linaro 8.4.0-3ubuntu1) 8.4.0, GNU ld (GNU Binutils for Ubuntu) 2.34)  #1613 SMP Thu Jan 5 11:59:48 GMT 2023
+# 
+imgfullname20230221=2023-02-21-raspios-bullseye-arm64-full.img
+imgfullurl20230221=http://downloads.raspberrypi.org/raspios_full_arm64/images/raspios_full_arm64-2023-02-22/2023-02-21-raspios-bullseye-arm64-full.img.xz
+imgname20230221=2023-02-21-raspios-bullseye-arm64.img
+imgurl20230221=http://downloads.raspberrypi.org/raspios_arm64/images/raspios_arm64-2023-02-22/2023-02-21-raspios-bullseye-arm64.img.xz
+imglitename20230221=2023-02-21-raspios-bullseye-arm64-lite.img
+imgliteurl20230221=http://downloads.raspberrypi.org/raspios_lite_arm64/images/raspios_lite_arm64-2023-02-22/2023-02-21-raspios-bullseye-arm64-lite.img.xz
+kernelversion20230221=5.15.84-v8+
+kernelbranch20230221=raspberrypi-kernel_1.20230106
+kernel5.15.84-v8+branch=1.20230106
+kerneldefconfig20230221=bcm2711_defconfig
+kernelconfig20230221=$(configsdir)/kernel_config.20230221
+rootclone20230221=$(currdir)/srcs/root/root20190926
 
 # Desktop Full Info
 # Raspberry Pi reference 2022-04-04

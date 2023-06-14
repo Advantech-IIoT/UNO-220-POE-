@@ -15,6 +15,8 @@ $(releasedir)/.unpack_img: $(img)
 $(img): 
 ifeq ($(imgver),20220404)
 	@cd $(releasedir) && xz -dkf $(zipimg) && mv $(builddir)/download/$(imgname) $(releasedir)
+else ifeq ($(imgver),20230221)
+	@cd $(releasedir) && xz -dkf $(zipimg) && mv $(builddir)/download/$(imgname) $(releasedir)
 else
 	@cd $(releasedir) && unzip $(zipimg)
 endif
@@ -161,7 +163,6 @@ build_img: \
 	enable_uno220gpio_config \
         enable_TPM_setting \
 	Install_RTC_package \
-	modules \
 	bootclone \
 	rootclone \
 	umount_img \
