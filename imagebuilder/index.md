@@ -13,11 +13,17 @@ for UNO-220 IO on Raspberry Pi 4.
 - Advantech UNO-220 (IO extender)
 - SD card (over 8GB recommanded)
 - Host PC
-  - Ubuntu 18.04 x86_64 (recommanded)
+  - Ubuntu 18.04 x86_64 (recommanded) or Ubuntu 20.04 x86 _64
   - Packages needs to be installed in host Ubuntu.
     ```
-    $ apt-get install -y bison flex libssl-dev
+    $ apt-get install -y net-tools bison ssh git make curl gcc build-essential gcc-arm-linux-gnueabief flex libssl-lib
     ```
+  - In Ubuntu 20.04, if there is error: /usr/bin/env: 'python': No such file or directory, please install python3 and set the shortcut.
+    ```
+    $ whereis python3
+    $ sudo ln -s /usr/bin/python3 /usr/bin/python
+    ```
+
 
 ## Clone Builder Source
 
@@ -32,6 +38,15 @@ for UNO-220 IO on Raspberry Pi 4.
 
 ## Build Commands
 
+- Change the image type.
+
+  ```
+  $ vi macro.mk
+  ```
+
+  Input the imgver and imgtype according to the requirement, then save the file. 
+
+
 - Show builder usage
 
   ```
@@ -39,9 +54,11 @@ for UNO-220 IO on Raspberry Pi 4.
   ```
 
 - Build image
+
   ```
   $ make build_img
   ```
+
 - Image information
   
   After building image done, you can use the command as below to
