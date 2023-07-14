@@ -33,7 +33,7 @@
 
 ---
 
-- [UNO-220 Advantech Image Builder](https://github.com/Advantech-IIoT/UNO-220-POE-/tree/docs/imagebuilder/)
+- [How to Build Advantech Image](https://github.com/Advantech-IIoT/UNO-220-POE-/tree/docs/imagebuilder/)
 - [Debian Package for Official Image](https://github.com/Advantech-IIoT/UNO-220-POE-/tree/docs/dpkg/README/)
 - [How to Test UNO-220](https://github.com/Advantech-IIoT/UNO-220-POE-/tree/docs/dpkg/TEST/)
 - Sample Codes & References
