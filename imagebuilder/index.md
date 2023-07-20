@@ -12,10 +12,10 @@ for UNO-220 IO on Raspberry Pi 4.
 - [Image Builder from Github]()
 - Advantech UNO-220 (IO extender)
 - SD card (over 8GB recommanded)
-- Host PC
-  - Ubuntu 18.04 x86_64 (recommanded) or Ubuntu 20.04 x86 _64
+- Host PC (Ubuntu 18.04 x86_64 recommanded or Ubuntu 20.04 x86_64)
   - Packages needs to be installed in host Ubuntu.
     ```
+    $ apt-get update
     $ apt-get install -y net-tools bison ssh git make curl gcc build-essential gcc-arm-linux-gnueabief flex libssl-lib
     ```
   - In Ubuntu 20.04, if there is error: /usr/bin/env: 'python': No such file or directory, please install python3 and set the shortcut.
@@ -25,7 +25,7 @@ for UNO-220 IO on Raspberry Pi 4.
     ```
 
 
-## Clone Builder Source
+## Clone 32-bit Builder Source
 
 - ssh
   ```
@@ -36,15 +36,24 @@ for UNO-220 IO on Raspberry Pi 4.
   $ git clone https://github.com/Advantech-IIoT/UNO-220-POE-.git
   ```
 
+## Clone 64-bit Builder Source
+
+- ssh
+  ```
+  $ git clone -b master_arm64 git@github.com:Advantech-IIoT/UNO-220-POE-.git
+  ```
+- https
+  ```
+  $ git clone -b master_arm64 https://github.com/Advantech-IIoT/UNO-220-POE-.git
+
 ## Build Commands
 
-- Change the image type.
+- Change the image type and image version.
 
   ```
   $ vi macro.mk
   ```
-
-  Input the imgver and imgtype according to the requirement, then save the file. 
+  Input the imgver and imgtype (lite, desktop or full) according to the requirement, then save the file. 
 
 
 - Show builder usage
