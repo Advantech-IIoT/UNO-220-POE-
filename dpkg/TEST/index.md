@@ -106,7 +106,7 @@
 
     Then, Pi will show received data prompt. 
 
-  - Host PC send data to Pi 
+  - Pi send data to PC  
 
     Command for host PC:
  
