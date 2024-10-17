@@ -29,7 +29,7 @@
 - TI TCA9554 IO extender
 - RTC RX-8010SJ-B
 - Serial to RS-232/485
-- Raspberry Pi 4 image base: 2021-05-07-raspios-buster-armhf-full.img
+- Raspberry Pi 4 image V1.0.6 base: 2023-02-21-raspios-bullseye-armhf-full.img and 2023-02-21-raspios-bullseye-armhf.img
 
 ---
 
